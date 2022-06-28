@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이다찾기</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--header-->
+    <div id="headerwrap">
+        <div id="header">
+            <a href="index.html"><img src="./img/logo/logo.png" height="70px"></a>
+            <div id="nav">
+                <div class="nav_menu">
+                    <span>꿀단지</span>
+                    <ul class="dropdown-content">
+                        <li><a href="#">10대 꿀단지</a></li>
+                        <li><a href="#">20대 꿀단지</a></li>
+                        <li><a href="#">30대 꿀단지</a></li>
+                        <li><a href="#">40대 꿀단지</a></li>
+                        <li><a href="#">50대 꿀단지</a></li>
+                        <li><a href="#">60대 꿀단지</a></li>
+                    </ul>
+                </div>
+                <div class="nav_menu">
+                    <span>홍보관</span>
+                    <ul class="dropdown-content">
+                        <li><a href="#">제도알림</a></li>
+                        <li><a href="#">서비스홍보</a></li>
+                        <li><a href="#">어플홍보</a></li>
+                        <li><a href="#">기관홍보</a></li>
+                        <li><a href="#">기업홍보</a></li>
+                    </ul>
+                </div>
+                <div class="nav_menu">
+                    <span>알립니다</span>
+                    <ul class="dropdown-content">
+                        <li><a href="#">주알림</a></li>
+                        <li><a href="#">달알림</a></li>
+                        <li><a href="#">상시알림</a></li>
+                    </ul>
+                </div>
+                <div class="nav_menu">
+                    <span>문의하기</span>
+                </div>
+            </div>
+            <div class="userInfo">
+                <button class="userIcon"><img src="./img/icon/account.png" alt=""></button>
+                <ul class="dropdown-content">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="membership.html">회원가입</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="#">1:1 문의</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+    <!--main-->
+    <div id="main">
+        <!-- idpw영역 -->
+        <div id="idpw">
+            <div id="id">
+                <div class="register">
+                    <h3>아이디찾기</h3>
+                    <form name="join_form" action="join_ok.php" method="post">
+                        <div class="flex">
+                            <ul class="container">
+                                
+                                <li class="item center">
+                                    이름
+                                </li>
+                                <li class="item">
+                                    <input type="text" name="uname" id="uname" autofocus required>
+                                </li>
+                                <li class="item">
+                                </li>
+                            </ul>
+            
+                            <ul class="container">
+                                <li class="item center">
+                                    휴대번호
+                                </li>
+                                <li class="item">
+                                    <input type="text" name="udi" id="uid" placeholder="" required>
+                                </li>
+                            </ul>
+
+                            <ul class="container">
+                                <li class="item center">
+                                </br></br></br>
+                                </li>                         
+                            </ul>
+            
+                            <div class="join_btn">
+                            <ul class="container">
+                                <li class="item center">
+                                </li>
+                                <li class="item">
+                                    <button class="submit" onclick="joinform_check();"  >찾기</button>
+                                </li>
+                                <li class="item">
+                                </li>
+                            </ul>
+                            </div>
+            
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="pw">
+                <div class="register">
+                    <h3>비밀번호찾기</h3>
+                    <form name="join_form" action="join_ok.php" method="post">
+                        <div class="flex">
+                            <ul class="container">
+                                <li class="item center">
+                                    아이디
+                                </li>
+                                <li class="item">
+                                    <input type="text" name="uname" id="uname" autofocus required>
+                                </li>
+                                <li class="item">
+                                </li>
+                            </ul>
+
+                            <ul class="container">
+                                <li class="item center">
+                                    이름
+                                </li>
+                                <li class="item">
+                                    <input type="text" name="uname" id="uname" autofocus required>
+                                </li>
+                                <li class="item">
+                                </li>
+                            </ul>
+            
+                            <ul class="container">
+                                <li class="item center">
+                                    휴대번호
+                                </li>
+                                <li class="item">
+                                    <input type="text" name="udi" id="uid" placeholder="" required>
+                                </li>
+                            </ul>            
+                            
+                            <div class="join_btn">
+                            <ul class="container">
+                                <li class="item center">
+                                </li>
+                                <li class="item">
+                                    <button class="submit" onclick="joinform_check();"  >찾기</button>
+                                </li>
+                                <li class="item">
+                                </li>
+                            </ul>
+                            </div>
+            
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--footer-->
+    <div id="footerwrap">
+        <div id="footer">
+            <div class="footer_col">
+                <ul class="col_content">
+                    <li>Creators</li>
+                    <li><a href="#">크리에이터</a></li>
+                    <li><a href="#">스몰비즈니스</a></li>
+                </ul>
+                <ul class="col_content">
+                    <li>Partners</li>
+                    <li><a href="#">비즈니스 광고</a></li>
+                    <li><a href="#">스토어 개설</a></li>
+                    <li><a href="#">지역업체 등록</a></li>
+                </ul>
+                <ul class="col_content">
+                    <li>Developers</li>
+                    <li><a href="#">꿀단지 개발자센터</a></li>
+                    <li><a href="#">오픈API</a></li>
+                    <li><a href="#">오픈소스</a></li>
+                    <li><a href="#">꿀단지 D2</a></li>
+                    <li><a href="#">꿀단지 D2SF</a></li>
+                    <li><a href="#">꿀단지 랩스</a></li>
+                </ul>
+            </div>
+            <div class="footer_row">
+                <ul class="row_icon">
+                    <li><a href="#"><img src="./img/icon/sns_fb.png"></a></li>
+                    <li><a href="#"><img src="./img/icon/sns_insta.png"></a></li>
+                    <li><a href="#"><img src="./img/icon/sns_yt.png"></a></li>
+                    <li><a href="#"><img src="./img/icon/sns_twt.png"></a></li>
+                </ul>
+                <ul class="row_content">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">인재채용</a></li>
+                    <li><a href="#">제휴제안</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">청소년보호정책</a></li>
+                    <li><a href="#">꿀단지 정책</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </div>
+            <p class="copyright">&copy; 꿀단지 Corp.</p>
+
+        </div>
+    </div>
+    <div id="moveTopBtn"><img src="./img/icon/topbtn.png"></div>
+</body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+<script>
+    //top 버튼
+    const topBtn = document.querySelector('#moveTopBtn');
+    topBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</html>
