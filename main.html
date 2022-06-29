@@ -6,19 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>꿀단지</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- 다크모드 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+    <link rel="stylesheet" href="dark.css"/>
 </head>
 
 <body>
     <!--header-->
     <div id="headerwrap">
         <div id="header">
-            <a href="index.html"><img src="./img/logo/logo.png" height="70px"></a>
+            <a href="main.html"><img src="./img/logo/logo.png" height="70px"></a>
             <div id="nav">
                 <div class="nav_menu">
                     <span>꿀단지</span>
@@ -62,6 +65,17 @@
                     <li><a href="#">1:1 문의</a></li>
                 </ul>
             </div>
+            
+            <div class="wrap">
+                <div class="darkmode">
+                    <div class="inner">
+                        <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
+                        <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
+                        <div class="darkmode-bg"></div>
+                    </div>
+            </div>
+        </div>
+
         </div>
 
     </div>
@@ -186,4 +200,34 @@
     }
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        //다크모드 토글
+        if(document.querySelector('.darkmode')){
+            if(localStorage.getItem("darkmode") == 'on'){
+                //다크모드 켜기
+                document.body.dataset.darkmode='on';
+                document.querySelector('#toggle-radio-dark').checked = true;
+
+            }
+            //다크모드 이벤트 핸들러
+            document.querySelector('.darkmode').addEventListener("click", e=>{
+                if(e.target.classList.contains('todark')){
+                    document.body.dataset.darkmode='on';
+                    localStorage.setItem("darkmode", "on");
+                    //다크일때 고정색줘서 스크롤해도 안비쳐지게함 
+                    headerwrap.style.backgroundColor = "#232529"
+                }else if(e.target.classList.contains('tolight')){
+                    document.body.dataset.darkmode='off';
+                    localStorage.setItem("darkmode", "off");
+                    //안다크일때 
+                    headerwrap.style.backgroundColor = "white"
+                }
+            },false);
+        }else{
+            localStorage.removeItem("darkmode");
+        }
+
+    })
+</script>
 </html>
