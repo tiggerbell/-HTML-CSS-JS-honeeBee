@@ -5,36 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
-    <link href='calendar/cal.css' rel='stylesheet' />
-    <script src='calendar/ko.js'></script>
-    <script src='calendar/cal.js'></script>
+    <script src="cal_data.js"></script>
     <title>알립니다</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          var calendarEl = document.getElementById('calendar');
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth'
-          });
-          calendar.render();
-        });
-
-        var calendar = new Calendar(calendarEl, {
-            dateclick: function(){
-                prompt('')
-            }
-        })
-      </script>
-      <script>
-        let calendar = new Calendar(calendarEl, {
-            events: [
-                {
-                    title: 'test title',
-                    start: '2022-06-28',
-                    end: '2022-06-29'
-                }
-            ]
-        })
-      </script>
 </head>
 <style>
     #headerwrap {
@@ -66,7 +38,7 @@
         font-weight: 800;
         letter-spacing: -5;
         cursor: pointer;
-    }
+    }   
 
     /*nav 드롭다운 호버*/
     .dropdown-content {
@@ -85,7 +57,7 @@
         font-size: 0.8em;
         display: block;
     }
-   
+
     .dropdown-content a:hover {
         background-color: #FFF987
     }
@@ -94,31 +66,103 @@
     .userInfo:hover .dropdown-content {
         display: block;
     }
-    .nav_menu:hover{
-        transform: scale( 1.1 );
+
+    .nav_menu:hover {
+        transform: scale(1.1);
     }
+
     /*userInfo*/
     .userInfo {
         position: relative;
         display: inline-block;
     }
-    .userIcon{
+
+    .userIcon {
         border: none;
         background-color: transparent;
     }
 </style>
 <style>
-    .calendarwrap{
-        width: 1200px;
-        padding-top: 120px;
-        margin: 0 auto;
-        background-color: #fff;
-    }
-    .selectedByUser{
+    .selectByUser{
         width: 500px;
-        height: 300px;
-        background-color: bisque;
+        height: 250px;
+        background-color: #FFF987;
+        border-radius: 20px;
         margin: 0 auto;
+    }
+    
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    /* 달력 */
+    .rap {
+        margin: 0 auto;
+        width: 820px;
+        padding-top: 150px;
+    }
+
+    .dateHead {
+        margin-bottom: .4rem;
+    }
+
+    .dateHead div {
+        background: #FFF987;
+        color: #fff;
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 5px;
+    }
+
+    .grid div {
+        padding: .6rem;
+        font-size: .9rem;
+        cursor: pointer;
+    }
+
+    .dateBoard div {
+        color: #222;
+        font-weight: bold;
+        min-height: 6rem;
+        padding: .6rem .8rem;
+        border-radius: .6rem;
+        border: 1px solid #eee;
+    }
+
+    .noColor {
+        background: #eee;
+    }
+
+    .calTop {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .btn {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #000;
+        border-width: 3px 3px 0 0;
+        cursor: pointer;
+    }
+
+    .prevDay {
+        transform: rotate(-135deg);
+    }
+
+    .nextDay {
+        transform: rotate(45deg);
     }
 </style>
 <body>
@@ -129,12 +173,12 @@
                 <div class="nav_menu">
                     <span>꿀단지</span>
                     <ul class="dropdown-content">
-                        <li class="ten on"><a href="#">10대 꿀단지</a></li>
-                        <li class="twenty"><a href="#">20대 꿀단지</a></li>
-                        <li class="thirty"><a href="#">30대 꿀단지</a></li>
-                        <li class="fourty"><a href="#">40대 꿀단지</a></li>
-                        <li class="fifty"><a href="#">50대 꿀단지</a></li>
-                        <li class="sixty"><a href="#">60대 꿀단지</a></li>
+                        <li><a href="#">10대 꿀단지</a></li>
+                        <li><a href="#">20대 꿀단지</a></li>
+                        <li><a href="#">30대 꿀단지</a></li>
+                        <li><a href="#">40대 꿀단지</a></li>
+                        <li><a href="#">50대 꿀단지</a></li>
+                        <li><a href="#">60대 꿀단지</a></li>
                     </ul>
                 </div>
                 <div class="nav_menu">
@@ -169,11 +213,113 @@
                 </ul>
             </div>
         </div>
-    </div> 
-    <!--캘린더에서 클릭 하면 관심 일정이 담기도록-->
-    <div class="calendarwrap">
-        <div class="selectedByUser"></div>
-        <div id='calendar'></div>
+    </div>
+    <div class='rap'>
+        <div class="selectByUser"></div>
+        <div class="calTop">
+            <div class="btn prevDay"></div>
+            <h2 class='dateTitle'></h2>
+            <div class="btn nextDay"></div>
+        </div>
+
+        <div class="grid dateHead">
+            <div>일</div>
+            <div>월</div>
+            <div>화</div>
+            <div>수</div>
+            <div>목</div>
+            <div>금</div>
+            <div>토</div>
+        </div>
+
+        <div id="date_grid" class="grid dateBoard"></div>
     </div>
 </body>
+<script>
+    // Date 포맷 
+    const dateFormat = (date) => {
+        return date.toLocaleDateString().replace(/\./g, "").split(" ");
+    }
+    // 달력 생성
+    const makeCalendar = (date) => {
+
+        // 현재의 년도와 월 받아오기
+        const [nowYear, nowMonth] = dateFormat(date);
+
+        // 지난달의 마지막 요일
+        const prevDay = new Date(nowYear, nowMonth - 1, 1).getDay();
+
+        // 현재 월의 마지막 날 구하기
+        const lastDay = dateFormat(new Date(nowYear, nowMonth, 0)).pop() * 1;
+
+        let htmlDummy = '';
+
+        // 전달 날짜 표시하기
+        for (let i = 0; i < prevDay; i++) {
+            htmlDummy += `<div class="noColor"></div>`;
+        }
+
+        // 현재 날짜 표시하기
+        for (let i = 1; i <= lastDay; i++) {
+            htmlDummy += `<div id="date_${i}">${i}</div>`;
+        }
+
+        // 지금까지 추가한 날짜 박스
+        const maxDay = prevDay + lastDay;
+
+        // 마지막날이 들어있는 열에 남은 박스 채우기
+        const nextDay = (Math.ceil(maxDay / 7) * 7) - maxDay;
+
+        // 다음달 날짜
+        for (let i = 0; i < nextDay; i++) {
+            htmlDummy += `<div class="noColor"></div>`;
+        }
+        document.querySelector(`.dateBoard`).innerHTML = htmlDummy;
+        document.querySelector(`.dateTitle`).innerText = `${nowYear}년 ${nowMonth}월`;
+    }
+
+    const date = new Date();
+
+    // Date 객체를 보내서 달력 생성
+    makeCalendar(date);
+    date.setMonth(date.getMonth() - 1);
+
+    // 이전달 이동
+    document.querySelector(`.prevDay`).onclick = () => {
+        makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
+    }
+
+    // 다음달 이동
+    document.querySelector(`.nextDay`).onclick = () => {
+        makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
+    }
+
+
+    for (let idx = 1; idx < 36; idx++) {
+        const date = document.querySelector(`#date_${idx}`)
+        const new_div = document.createElement("div")
+        new_div.style.backgroundColor = "blue"
+        new_div.innerHTML = `${idx}일`
+        // new_div.onclick = () => {
+        //     let user = document.querySelector('.selectByUser')
+        //     const input_string = `아무거나` //데이터 배열
+        //     user.innerHTML = input_string
+        // }
+        date.appendChild(new_div)
+    }
+
+
+    // for (let idx = 1; idx < 36; idx++) {
+    //     const date = document.querySelector(`#date_${idx}`)
+    //     const new_div = document.createElement("div")
+    //     new_div.style.backgroundColor = "red"
+    //     new_div.innerHTML = `${idx}일`
+    //     new_div.onclick = () => {
+    //         console.log(idx)
+    //         const input_string = prompt("일정을 입력하세요.")
+    //         new_div.innerHTML = input_string
+    //     }
+    //     date.appendChild(new_div)
+    // }
+</script>
 </html>

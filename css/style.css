@@ -2,9 +2,10 @@
     #headerwrap {
         position: fixed;
         width: 100%;
-        background-color: #fff;
+        background-color: white;
         border-bottom: 1px solid #FFF987;
         z-index: 2;
+       
     }
 
     #header {
@@ -34,7 +35,7 @@
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #F9F9F9;
+        background-color: #fff;
         font-weight: 400;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -72,7 +73,8 @@
     /*main*/
     #main {
         padding-top: 100px;
-        background-color: #f7f7f7;
+        background-color: transparent;
+        overflow: hidden;
     }
 
     #main_area {
@@ -112,7 +114,7 @@
         width: 400px;
         height: inherit;
         padding: 30px;
-        background-color: #FFF;
+        background-color: transparent;
     }
 
     .info_hit h1, .info_regional h1{
@@ -136,12 +138,12 @@
     .content_area_2 div{
         width: 700px;
         height: 660px;
-        background-color: #fff;
+        background-color: transparent;
     }
     /*footer*/
     #footerwrap {
         width: 100%;
-        background-color: #fff;
+        background-color: transparent;
         border-top: 1px solid #FFF987;
         z-index: 2;
        
@@ -324,7 +326,3 @@
               background: white;
           } */
 
-#BinBox{
-    height: 40px;
-    width: 306px;
-}
