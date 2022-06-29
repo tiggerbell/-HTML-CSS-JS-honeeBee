@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
-    <script src="cal_data.js"></script>
+    <!-- <script src="cal_data.js"></script> -->
     <title>알립니다</title>
 </head>
 <style>
@@ -38,7 +39,7 @@
         font-weight: 800;
         letter-spacing: -5;
         cursor: pointer;
-    }   
+    }
 
     /*nav 드롭다운 호버*/
     .dropdown-content {
@@ -83,14 +84,15 @@
     }
 </style>
 <style>
-    .selectByUser{
-        width: 500px;
+    .selectByUser {
+        width: 400px;
         height: 250px;
+        padding: 30px;
         background-color: #FFF987;
         border-radius: 20px;
         margin: 0 auto;
     }
-    
+
     @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
     * {
@@ -104,7 +106,7 @@
     .rap {
         margin: 0 auto;
         width: 820px;
-        padding-top: 150px;
+        padding-top: 120px;
     }
 
     .dateHead {
@@ -113,7 +115,7 @@
 
     .dateHead div {
         background: #FFF987;
-        color: #fff;
+        color: #222;
         text-align: center;
     }
 
@@ -146,6 +148,7 @@
         display: flex;
         justify-content: space-between;
         padding: 1rem 2rem;
+        margin-top: 30px;
     }
 
     .btn {
@@ -165,6 +168,7 @@
         transform: rotate(45deg);
     }
 </style>
+
 <body>
     <div id="headerwrap">
         <div id="header">
@@ -215,7 +219,10 @@
         </div>
     </div>
     <div class='rap'>
-        <div class="selectByUser"></div>
+        <div class="selectByUser">
+            <!-- <input type="text" name="date" id="date_input">
+            <input type="text" name="content" id="content_input"> -->
+        </div>
         <div class="calTop">
             <div class="btn prevDay"></div>
             <h2 class='dateTitle'></h2>
@@ -236,6 +243,29 @@
     </div>
 </body>
 <script>
+    const jsonData = [
+        { "date": 1, "content": "집가기" },
+        { "date": 2, "content": "물마시기" },
+        { "date": 3, "content": "놀기" },
+        { "date": 4, "content": "놀기" },
+        { "date": 5, "content": "집가기" },
+        { "date": 6, "content": "물마시기" },
+        { "date": 7, "content": "집가기" },
+        { "date": 8, "content": "밥먹기" },
+        { "date": 9, "content": "집가기" },
+        { "date": 10, "content": "영화보기" },
+        { "date": 11, "content": "집가기" },
+        { "date": 12, "content": "집나가기" },
+        { "date": 13, "content": "집가기" },
+        { "date": 14, "content": "집들어가기" },
+        { "date": 15, "content": "영화안보기" },
+        { "date": 16, "content": "집가기" },
+        { "date": 17, "content": "집안가기" },
+        { "date": 18, "content": "집가기" },
+        { "date": 19, "content": "놀지않기" },
+        { "date": 20, "content": "집가기" }
+    ]
+
     // Date 포맷 
     const dateFormat = (date) => {
         return date.toLocaleDateString().replace(/\./g, "").split(" ");
@@ -294,32 +324,35 @@
         makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
     }
 
+    //일정 이름 누르면 위에 있는 리스트에 들어가도록
+    const events = []
 
     for (let idx = 1; idx < 36; idx++) {
         const date = document.querySelector(`#date_${idx}`)
         const new_div = document.createElement("div")
-        new_div.style.backgroundColor = "blue"
-        new_div.innerHTML = `${idx}일`
-        // new_div.onclick = () => {
-        //     let user = document.querySelector('.selectByUser')
-        //     const input_string = `아무거나` //데이터 배열
-        //     user.innerHTML = input_string
-        // }
-        date.appendChild(new_div)
+        new_div.style.backgroundColor = "transparent"
+        new_div.style.fontWeight = "300"
+
+
+        new_div.onclick = () => {
+            let user = document.querySelector('.selectByUser')
+            user.innerHTML += new_div.innerHTML
+        }
+
+        if (date) date.appendChild(new_div)
+
+        events.push({
+            date: `${idx}`,
+            content: "",
+            element: new_div
+        })
+
     }
-
-
-    // for (let idx = 1; idx < 36; idx++) {
-    //     const date = document.querySelector(`#date_${idx}`)
-    //     const new_div = document.createElement("div")
-    //     new_div.style.backgroundColor = "red"
-    //     new_div.innerHTML = `${idx}일`
-    //     new_div.onclick = () => {
-    //         console.log(idx)
-    //         const input_string = prompt("일정을 입력하세요.")
-    //         new_div.innerHTML = input_string
-    //     }
-    //     date.appendChild(new_div)
-    // }
+    // console.log(events.element);
+    jsonData.forEach((dateObj, idx) => {
+        events[idx].content = dateObj.content
+        events[idx].element.innerHTML = dateObj.content
+    })
 </script>
+
 </html>
