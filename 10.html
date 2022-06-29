@@ -6,16 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/reset.css">
     <title>10대 꿀단지</title>
 </head>
 <body>
    <div class="nav">
     <div id="headerwrap">
         <div id="header">
-            <a href="index.html"><img src="./img/logo/logo.png" height="70px"></a>
+            <a href="main.html"><img src="./img/logo/logo.png" height="70px"></a>
             <div id="nav">
                 <div class="nav_menu">
                     <span>꿀단지</span>
@@ -64,22 +64,59 @@
    </div>
    <main>
         <div class="main_content">
-            <div class="t1"><h1>10대 꿀단지 실시간 베스트</h1> <button>글쓰기</button></div>
+            <div class="t1"><h1>10대 꿀단지 실시간 베스트</h1><button id="write_Btn10">글쓰기</button></div>
             <div class="t2 tt1">
                 <div class="title-number">번호</div>
                 <div id="title">제목</div>
                 <div class="name">닉네임</div>
                 <div class="date">날짜</div>
             </div>
-            <div class="t2">
-                <div class="title-number">1</div>
-                <div class="title">
-                    <span>ㄹㅇ ㅋㅋ</span>
+       </div>
+       <div class="main_content hide">
+            <div class="t1"><h1>게시글 작성</h1></div>
+            <div class="write_main">
+                <div class="write_pt">
+                    <div class="write_contens title">
+                        <div>
+                            <div class="w1">
+                                <input id="titl" placeholder="제목을 입력하세요" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="write_contens ct">
+                        <div>
+                            <div class="w1">
+                                <textarea id="cont" placeholder="내용을 입력해 주세요"  name="Text1" cols="40" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bnt">
+                        <div class="bnt_location">
+                            <button id="register" type="button"  class="btn btn-primary">등록하기</button>
+                            <button id="list_btn1" type="button" class="btn btn-secondary">목록으로</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="name">아겐</div>
-                <div class="date">6.23</div>
             </div>
        </div>
+       <div class="main_content hide">
+         <div class="t1"><h1></h1></div>
+            <div class="write_main">
+                <div class="write_pt">
+                    <div class="write_contens title">
+                        <div>
+                            <div class="inner_content"></div>
+                        </div>
+                    </div>
+                    <div class="bnt">
+                        <div class="bnt_location">
+                            <button id="list_btn2" type="button"  class="btn btn-primary">목록으로</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
    </main>
 </body>
+<script src="write.js"></script>
 </html>
