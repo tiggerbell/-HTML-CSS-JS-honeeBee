@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .rouletteWrap {
+        width: 1200px;
+        padding-top: 110px;
+    }
+
+    /* .roulette{
+        background-image: url(./img/91.jpg);
+    }  */
+</style>
+
+<body>
+    <div class="rouletteWrap">
+        <div><img class="roulette" src="./img/91.jpg" alt="test"></div>
+    </div>
+    <button class="startBtn">startBtn</button>
+    <button class="stopBtn">stopBtn</button>
+</body>
+<script>
+    // https://jnoony-code.tistory.com/19
+    //룰렛 돌아가는 속도, 횟수 등
+    //룰렛 결과 확률
+    let rolImg = document.querySelector('.roulette')
+    let startBtn = document.querySelector('.startBtn')
+    // let deg = []
+    let num = 0;
+
+
+    // let res = Math.floor(Math.random()*6)
+
+    //버튼을 누르면 시작
+    startBtn.onclick = () => {
+        setInterval(() => {
+            num++;
+            rolImg.style.transform = "rotate("+360 * num+"deg)"
+        }, 50); 
+    }
+    //버튼 한 번 더 누르면 정지
+    let stopBtn = document.querySelector('.stopBtn')                            
+</script>
+
+</html>

@@ -220,8 +220,9 @@
     </div>
     <div class='rap'>
         <div class="selectByUser">
-            <!-- <input type="text" name="date" id="date_input">
-            <input type="text" name="content" id="content_input"> -->
+            <ul>
+                <li class="selectList"></li>
+            </ul>
         </div>
         <div class="calTop">
             <div class="btn prevDay"></div>
@@ -244,26 +245,37 @@
 </body>
 <script>
     const jsonData = [
-        { "date": 1, "content": "집가기" },
-        { "date": 2, "content": "물마시기" },
-        { "date": 3, "content": "놀기" },
-        { "date": 4, "content": "놀기" },
-        { "date": 5, "content": "집가기" },
-        { "date": 6, "content": "물마시기" },
-        { "date": 7, "content": "집가기" },
-        { "date": 8, "content": "밥먹기" },
-        { "date": 9, "content": "집가기" },
-        { "date": 10, "content": "영화보기" },
-        { "date": 11, "content": "집가기" },
-        { "date": 12, "content": "집나가기" },
-        { "date": 13, "content": "집가기" },
-        { "date": 14, "content": "집들어가기" },
-        { "date": 15, "content": "영화안보기" },
-        { "date": 16, "content": "집가기" },
-        { "date": 17, "content": "집안가기" },
-        { "date": 18, "content": "집가기" },
-        { "date": 19, "content": "놀지않기" },
-        { "date": 20, "content": "집가기" }
+        { "date": 1, "content": "<br><br>" },
+        { "date": 2, "content": "<br><br>" },
+        { "date": 3, "content": "<br><br>" },
+        { "date": 4, "content": "<br><br>" },
+        { "date": 5, "content": "<br><br>" },
+        { "date": 6, "content": "<br><br>" },
+        { "date": 7, "content": "<br><br>" },
+        { "date": 8, "content": "<br><br>" },
+        { "date": 9, "content": "<br><br>" },
+        { "date": 10, "content": "<br><br>" },
+        { "date": 11, "content": "<br><br>" },
+        { "date": 12, "content": "<br><br>" },
+        { "date": 13, "content": "<br><br>" },
+        { "date": 14, "content": "<br><br>" },
+        { "date": 15, "content": "<br><br>" },
+        { "date": 16, "content": "<br><br>" },
+        { "date": 17, "content": "<br><br>" },
+        { "date": 18, "content": "<br><br>" },
+        { "date": 19, "content": "<br><br>" },
+        { "date": 20, "content": "<br><br>" },
+        { "date": 21, "content": "<br><br>" },
+        { "date": 22, "content": "<br><br>" },
+        { "date": 23, "content": "<br><br>" },
+        { "date": 24, "content": "<br><br>" },
+        { "date": 25, "content": "<br><br>" },
+        { "date": 26, "content": "<br><br>" },
+        { "date": 27, "content": "<br><br>" },
+        { "date": 28, "content": "<br><br>" },
+        { "date": 29, "content": "<br><br>" },
+        { "date": 30, "content": "<br><br>" },
+        { "date": 31, "content": "<br><br>" },
     ]
 
     // Date 포맷 
@@ -331,11 +343,12 @@
         const date = document.querySelector(`#date_${idx}`)
         const new_div = document.createElement("div")
         new_div.style.backgroundColor = "transparent"
-        new_div.style.fontWeight = "300"
+        new_div.style.fontWeight = "500"
+        new_div.style.fontSize = "0.8em"
 
 
         new_div.onclick = () => {
-            let user = document.querySelector('.selectByUser')
+            let user = document.querySelector('.selectList')
             user.innerHTML += new_div.innerHTML
         }
 
@@ -343,11 +356,12 @@
 
         events.push({
             date: `${idx}`,
-            content: "",
+            content: "",   
             element: new_div
         })
 
     }
+    
     // console.log(events.element);
     jsonData.forEach((dateObj, idx) => {
         events[idx].content = dateObj.content
