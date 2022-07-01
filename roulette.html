@@ -9,43 +9,125 @@
 </head>
 <style>
     .rouletteWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 1200px;
         padding-top: 110px;
+        margin: 0 auto;
+        position: fixed;
     }
 
-    /* .roulette{
-        background-image: url(./img/91.jpg);
-    }  */
+    .arrow {
+        position: absolute;
+        top: 100px;
+        right: 574px;
+        z-index: 1;
+    }
+
+    .roulette {
+        border-radius: 700px;
+        transition: all 1.8s linear;
+    }
+
+    .rotate_360 {
+        transform: rotate(2400deg);
+    }
+
+    .rotate {
+        animation: rotate_image 1s linear infinite;
+    }
+
+    @keyframes rotate_image {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    button {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border: none;
+        border-radius: 50%;
+        background-color: bisque;
+        margin: 10px;
+        font-size: 1em;
+        cursor: pointer;
+
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        box-shadow: #3e3e3e(0 5px 5px 0);
+    }
+    #startBtn{
+        z-index: 5;
+    }
+    .active {
+        display: block;
+    }
+
+    .deactive {
+        display: none;
+    }
+
 </style>
 
 <body>
     <div class="rouletteWrap">
-        <div><img class="roulette" src="./img/91.jpg" alt="test"></div>
+        <div><img class="arrow" src="./img/this_arrow.png" width="50px"></div>
+        <div><img class="roulette" src="./img/rl6.png" width="500px"></div>
+        <button id="startBtn">start</button>
+        <button id="resetBtn">reset</button>
     </div>
-    <button class="startBtn">startBtn</button>
-    <button class="stopBtn">stopBtn</button>
+
 </body>
 <script>
-    // https://jnoony-code.tistory.com/19
-    //룰렛 돌아가는 속도, 횟수 등
-    //룰렛 결과 확률
-    let rolImg = document.querySelector('.roulette')
-    let startBtn = document.querySelector('.startBtn')
-    // let deg = []
-    let num = 0;
-
-
-    // let res = Math.floor(Math.random()*6)
-
+    //룰렛 돌아가는 속도, 횟수 등 결과 확률
+    //각도 6등분, 랜덤으로 6개 각도 중 하나가 걸리게
     //버튼을 누르면 시작
-    startBtn.onclick = () => {
-        setInterval(() => {
-            num++;
-            rolImg.style.transform = "rotate("+360 * num+"deg)"
-        }, 50); 
-    }
-    //버튼 한 번 더 누르면 정지
-    let stopBtn = document.querySelector('.stopBtn')                            
+
+    const startBtn = document.querySelector("#startBtn")
+    const roulette = document.querySelector(".roulette")
+    const resetBtn = document.querySelector('#resetBtn')
+    let isRotate = false
+    let turn = 2
+    let deg = [30, 90, 150, 210, 270, 330]
+    let res;
+    roulette.addEventListener("transitionend", () => {
+        if (isRotate) {
+            setTimeout(() => {
+                alert(res)
+                // document.getElementById('resetBtn').style.display = "block"
+            }, 100);
+        }
+    })
+
+    startBtn.addEventListener('click', () => {
+        if (!isRotate) {
+            res = deg[Math.floor(Math.random() * deg.length)]
+            roulette.style = `transform : rotate(${2400 + res}deg);`
+            isRotate = true
+            startBtn.classList.add("deactive")
+            resetBtn.classList.add("active")
+        }
+    })
+
+    resetBtn.addEventListener('click', () => {
+        isRotate = false
+        roulette.style = ""
+        roulette.style.transition = "all 0.5s"
+        roulette.classList.remove("rotate_360")
+        startBtn.classList.remove("deactive")
+        resetBtn.classList.remove("active")
+    })
+
+
 </script>
 
 </html>
