@@ -38,6 +38,10 @@
         animation: rotate_image 1s linear infinite;
     }
 
+    .rolling_arrow {
+        animation: 0.08s arrow_anim linear infinite;
+    }
+
     @keyframes rotate_image {
         0% {
             transform: rotate(0deg);
@@ -45,6 +49,18 @@
 
         100% {
             transform: rotate(360deg);
+        }
+    }
+
+    @keyframes arrow_anim {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(-30deg);
         }
     }
 
@@ -65,9 +81,11 @@
         transform: scale(1.1);
         box-shadow: #3e3e3e(0 5px 5px 0);
     }
-    #startBtn{
+
+    #startBtn {
         z-index: 5;
     }
+
     .active {
         display: block;
     }
@@ -75,7 +93,6 @@
     .deactive {
         display: none;
     }
-
 </style>
 
 <body>
@@ -88,19 +105,18 @@
 
 </body>
 <script>
-    //룰렛 돌아가는 속도, 횟수 등 결과 확률
-    //각도 6등분, 랜덤으로 6개 각도 중 하나가 걸리게
-    //버튼을 누르면 시작
-
     const startBtn = document.querySelector("#startBtn")
     const roulette = document.querySelector(".roulette")
     const resetBtn = document.querySelector('#resetBtn')
+    const arrow = document.querySelector(".arrow")
+    console.log(arrow);
     let isRotate = false
     let turn = 2
     let deg = [30, 90, 150, 210, 270, 330]
     let res;
     roulette.addEventListener("transitionend", () => {
         if (isRotate) {
+            arrow.classList.remove("rolling_arrow")
             setTimeout(() => {
                 alert(res)
                 // document.getElementById('resetBtn').style.display = "block"
@@ -108,6 +124,7 @@
         }
     })
 
+    //돌림판 시작
     startBtn.addEventListener('click', () => {
         if (!isRotate) {
             res = deg[Math.floor(Math.random() * deg.length)]
@@ -115,9 +132,9 @@
             isRotate = true
             startBtn.classList.add("deactive")
             resetBtn.classList.add("active")
+            arrow.classList.add("rolling_arrow")
         }
     })
-
     resetBtn.addEventListener('click', () => {
         isRotate = false
         roulette.style = ""
@@ -125,6 +142,7 @@
         roulette.classList.remove("rotate_360")
         startBtn.classList.remove("deactive")
         resetBtn.classList.remove("active")
+        arrow.classList.remove("rolling_arrow")
     })
 
 
