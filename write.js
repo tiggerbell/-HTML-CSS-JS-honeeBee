@@ -41,6 +41,7 @@ register.onclick = function(){
     console.log(title)
     console.log(con) 
     console.log(number)
+    console.log(a.classList)
     // 게시글 찾아서 게시글 보여주기
     a.onclick = () => {
         for(let i = 1;i <= number.length ;i++){
@@ -52,10 +53,8 @@ register.onclick = function(){
                 document.querySelector(".inner_content").innerHTML = con[i-1]
                 console.log(a.classList[1]);
             }
-            console.log(number.length)
+            // console.log(number.length)
         }
-       
-        
     }
 }
 // 게시글작성에서 목록으로 돌아가기
@@ -72,6 +71,7 @@ list_btn2.onclick = function(){
     document.querySelectorAll(".main_content")[1].style.display = "none"
     document.querySelectorAll(".main_content")[2].style.display = "none"
 }
+// 게시글 삭제
 
 
 
