@@ -73,15 +73,13 @@
                         <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
                         <div class="darkmode-bg"></div>
                     </div>
+                </div>
             </div>
         </div>
-
-        </div>
-
     </div>
 
     </div>
-    <!--main-->
+    <!-- main -->
     <div id="main">
         <div id="main_area">
             <div class="swiper mySwiper">
@@ -171,36 +169,14 @@
     </div>
     <div id="moveTopBtn"><img src="./img/icon/topbtn.png"></div>
 </body>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
-<script>
-    //menu 클릭시 화면 보여주기
-    // function setMenu = document.querySelectorAll('ul li')
     //top 버튼
     const topBtn = document.querySelector('#moveTopBtn');
     topBtn.onclick = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-</script>
 
-<script>
+    //다크모드
     document.addEventListener('DOMContentLoaded', function(){
         //다크모드 토글
         if(document.querySelector('.darkmode')){
