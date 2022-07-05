@@ -1,0 +1,36 @@
+.notice-wrap{
+    display: flex;
+    justify-content: center;
+}
+div h2{
+    font-size: 24px;
+    font-family: "spoqa_bold";
+    width: 470px;
+    margin: 0 0 20px 40px;
+}
+
+.notice-main{
+    font-size: 56px;
+    font-family: "spoqa_bold";
+    text-align: center;
+}
+.cocoa{
+    width: 350px;
+    height: 95px;
+    padding: 30px;
+}
+/* .cocoa::before{
+    border: 1px solid #F58220;
+    opacity: 0;
+    transition: 0.5s;
+} */
+.cocoa:hover{
+    border: 1px solid #F58220;
+
+    /* transition: 0.5s; */
+}
+.text123{
+    font-size: 20px;
+    font-family: "spoqa_medium";
+    height: 60px;
+}
