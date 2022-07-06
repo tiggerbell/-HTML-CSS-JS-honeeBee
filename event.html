@@ -9,52 +9,152 @@
     <link rel="stylesheet" href="./css/reset.css">
 </head>
 <style>
-    .cardwrap{
-        padding: 100px 20px 20px 20px;
-        margin: 0 auto;
+    .cardwrap {
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
-    }
-    
-    .hidden {
-        width: 250px;
-        height: 350px;
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 10px;
+        margin: 30px;
+        padding-top: 100px;
     }
 
-    .card-body img{
-        float: right;
+    .card_item {
+        box-sizing: border-box;
+        width: 380px;
+        height: 500px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .card_photo{
+        width: 330px;
+        height: 320px;
+        border-radius: 10px;
+    }
+
+    .card_title{
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 5px;
+    }
+
+    .cardLike {
         cursor: pointer;
+        border: none;
+        width: 50px;
+        height: 50px;
+        background: url('./icon/heart_off.png') center no-repeat;
+    }
+
+    .card_toggle{
+        display: flex;
+        justify-content: center;
+    }
+
+    .cardBtn{
+        cursor: pointer;
+        border: none;
+        background-color: #ffbb2e;
+    }
+
+    .on {
+        cursor: pointer;
+        border: none;
+        width: 50px;
+        height: 50px;
+        background: url('./icon/heart_on.png') center no-repeat;
+        animation: pop 0.3s linear;
+    }
+
+    @keyframes pop {
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
     }
 </style>
+
 <body>
     <div class="cardwrap">
-        <div class="hidden">
-            <img class="cardPhoto">
-            <div class="cardInfo">
-                <h5 class="cardTitle"></h5>
-                <p class="cardText"></p>
+        <div class="card_item" hidden>
+            <img class="card_photo">
+            <div>
+                <h3 class="card_title"></h3>
+                <p class="card_content"></p>
+            </div>
+            <div class="card_toggle">
                 <button href="#" class="cardBtn">확인하기</button>
-                <img class="cardLike">
+                <div class="cardLike"></div>
             </div>
         </div>
     </div>
+    <div class="favoriteList"></div>
 </body>
 <script>
-    //json에 내용 담아서 카드 여러개 구현
-    //좋아요 누르면 빨간 하트로 바뀜
-    let likeBtn = document.querySelector('.cardLike')
-    likeBtn.addEventListener("click", function(){
-        toggle(photo.idx)    
-    })
+    //데이터는 객체 배열로 만들어서 불러오기
+    const cards = [
+        {
+            idx: 1,
+            card_photo: '90.jpg',
+            card_title: '나는 타이틀',
+            card_content: '나는 내용',
+            cardBtn: '확인하기'
+        },
+        {
+            idx: 2,
+            card_photo: '91.jpg',
+            card_title: '나는 타이틀2',
+            card_content: '나는 내용2',
+            cardBtn: '확인하기'
+        },
+        {
+            idx: 3,
+            card_photo: '92.jpg',
+            card_title: '나는 타이틀3',
+            card_content: '나는 내용3',
+            cardBtn: '확인하기'
+        },
+        {
+            idx: 4,
+            card_photo: '93.jpg',
+            card_title: '나는 타이틀4',
+            card_content: '나는 내용4',
+            cardBtn: '확인하기'
+        },
+    ]
 
-    // function toggleLike(idx) {
-    //     if()
-    // }
+    function showCards() {
+        let cardList = document.querySelector('.cardwrap');
+        cards.forEach(function (card) {
+            let cardNode = document.querySelector(".card_item[hidden]").cloneNode(true);
+            cardNode.querySelector(".card_photo").src = './img/' + card.card_photo;
+            cardNode.querySelector(".card_title").innerHTML = card.card_title;
+            cardNode.querySelector(".card_content").innerHTML = card.card_content;
+            cardNode.querySelector(".cardBtn").innerHTML = card.cardBtn;
+            cardNode.hidden = false;
+            cardList.appendChild(cardNode);
+        })
+    }
+
+    function init() {
+        showCards();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        init();
+    });
+    //좋아요 누르면 빨간 하트로 바뀜
+    let like = document.querySelector(".cardLike")
+    like.addEventListener("click", function () {
+        like.classList.toggle("on")
+        let fav = document.querySelector(".favoriteList")
+        fav.appendChild() = document.querySelector(".card_item")
+    })
 </script>
+
 </html>
 <div></div>
