@@ -38,23 +38,24 @@
         margin: 5px;
     }
 
-    .cardLike {
-        cursor: pointer;
-        border: none;
-        width: 50px;
-        height: 50px;
-        background: url('./icon/heart_off.png') center no-repeat;
-    }
 
     .card_toggle{
         display: flex;
         justify-content: center;
     }
 
-    .cardBtn{
+    .card_btn{
         cursor: pointer;
         border: none;
         background-color: #ffbb2e;
+    }
+    
+    .heart_img {
+        cursor: pointer;
+        border: none;
+        width: 50px;
+        height: 50px;
+        background: url('./icon/heart_off.png') center no-repeat;
     }
 
     .on {
@@ -80,61 +81,58 @@
 
 <body>
     <div class="cardwrap">
-        <div class="card_item" hidden>
+        <div class="card_item">
             <img class="card_photo">
             <div>
                 <h3 class="card_title"></h3>
                 <p class="card_content"></p>
             </div>
             <div class="card_toggle">
-                <button href="#" class="cardBtn">확인하기</button>
-                <div class="cardLike"></div>
+                <button href="#" class="card_btn">확인하기</button>
+                <div class="heart_img">
             </div>
         </div>
     </div>
-    <div class="favoriteList"></div>
 </body>
 <script>
     //데이터는 객체 배열로 만들어서 불러오기
     const cards = [
+        // {
+        //     "card_photo": "90.jpg",
+        //     "card_title": "나는 타이틀",
+        //     "card_content": "나는 내용",
+        //     "card_btn": "확인하기"
+        // },
         {
-            idx: 1,
-            card_photo: '90.jpg',
-            card_title: '나는 타이틀',
-            card_content: '나는 내용',
-            cardBtn: '확인하기'
-        },
-        {
-            idx: 2,
-            card_photo: '91.jpg',
+            card_photo: '93.jpg',
             card_title: '나는 타이틀2',
             card_content: '나는 내용2',
-            cardBtn: '확인하기'
+            card_btn: '확인하기',
+            heart_img:'heart_off.png'
         },
         {
-            idx: 3,
-            card_photo: '92.jpg',
+            card_photo: '93.jpg',
             card_title: '나는 타이틀3',
             card_content: '나는 내용3',
-            cardBtn: '확인하기'
+            card_btn: '확인하기'
         },
         {
-            idx: 4,
             card_photo: '93.jpg',
             card_title: '나는 타이틀4',
             card_content: '나는 내용4',
-            cardBtn: '확인하기'
+            card_btn: '확인하기'
         },
     ]
 
     function showCards() {
         let cardList = document.querySelector('.cardwrap');
         cards.forEach(function (card) {
-            let cardNode = document.querySelector(".card_item[hidden]").cloneNode(true);
+            let cardNode = document.querySelector(".card_item").cloneNode(true);
             cardNode.querySelector(".card_photo").src = './img/' + card.card_photo;
             cardNode.querySelector(".card_title").innerHTML = card.card_title;
             cardNode.querySelector(".card_content").innerHTML = card.card_content;
-            cardNode.querySelector(".cardBtn").innerHTML = card.cardBtn;
+            cardNode.querySelector(".card_btn").innerHTML = card.card_btn;
+            cardNode.querySelector(".heart_img").src = './icon/' + card.heart_img;
             cardNode.hidden = false;
             cardList.appendChild(cardNode);
         })
@@ -144,15 +142,18 @@
         showCards();
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        init();
-    });
+    window.onload = showCards();
+
+    // jsonData.forEach((dateObj, idx) => {
+    //     events[idx].content = dateObj.content
+    //     events[idx].element.innerHTML = dateObj.content
+    // })
+
     //좋아요 누르면 빨간 하트로 바뀜
-    let like = document.querySelector(".cardLike")
-    like.addEventListener("click", function () {
+    let like = document.querySelector(".heart_img")
+    like.addEventListener("click",()=>{
+        console.log("di")
         like.classList.toggle("on")
-        let fav = document.querySelector(".favoriteList")
-        fav.appendChild() = document.querySelector(".card_item")
     })
 </script>
 
