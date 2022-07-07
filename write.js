@@ -72,7 +72,9 @@ list_btn2.onclick = function(){
     document.querySelectorAll(".main_content")[2].style.display = "none"
 }
 // 게시글 삭제
+list_delete.onclick = function(){
 
+}
 
 
 
