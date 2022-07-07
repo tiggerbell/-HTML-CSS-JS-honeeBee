@@ -6,62 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/write.css">
     <title>10대 꿀단지</title>
 </head>
 <body>
-   <div class="nav">
-    <div id="headerwrap">
-        <div id="header">
-            <a href="main.html"><img src="./img/logo/logo.png" height="70px"></a>
-            <div id="nav">
-                <div class="nav_menu">
-                    <span>꿀단지</span>
-                    <ul class="dropdown-content">
-                        <li><a href="#">10대 꿀단지</a></li>
-                        <li><a href="#">20대 꿀단지</a></li>
-                        <li><a href="#">30대 꿀단지</a></li>
-                        <li><a href="#">40대 꿀단지</a></li>
-                        <li><a href="#">50대 꿀단지</a></li>
-                        <li><a href="#">60대 꿀단지</a></li>
-                    </ul>
-                </div>
-                <div class="nav_menu">
-                    <span>홍보관</span>
-                    <ul class="dropdown-content">
-                        <li><a href="#">제도알림</a></li>
-                        <li><a href="#">서비스홍보</a></li>
-                        <li><a href="#">어플홍보</a></li>
-                        <li><a href="#">기관홍보</a></li>
-                        <li><a href="#">기업홍보</a></li>
-                    </ul>
-                </div>
-                <div class="nav_menu">
-                    <span>알립니다</span>
-                    <ul class="dropdown-content">
-                        <li><a href="#">주알림</a></li>
-                        <li><a href="#">달알림</a></li>
-                        <li><a href="#">상시알림</a></li>
-                    </ul>
-                </div>
-                <div class="nav_menu">
-                    <span>문의하기</span>
-                </div>
-            </div>
-            <div class="userInfo">
-                <button class="userIcon"><img src="./img/icon/account.png" alt=""></button>
-                <ul class="dropdown-content">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                    <li><a href="#">1:1 문의</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-   </div>
+ 
    <main>
         <div class="main_content">
             <div class="t1"><h1>10대 꿀단지 실시간 베스트</h1><button id="write_Btn10">글쓰기</button></div>
@@ -111,6 +62,7 @@
                     <div class="bnt">
                         <div class="bnt_location">
                             <button id="list_btn2" type="button"  class="btn btn-primary">목록으로</button>
+                            <button id="list_delete" type="button" class="btn btn-danger">삭제하기</button>
                         </div>
                     </div>
                 </div>
@@ -118,5 +70,5 @@
         </div>
    </main>
 </body>
-<script src="write.js"></script>
+<script src="../js/board.js"></script>
 </html>
