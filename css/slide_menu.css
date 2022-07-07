@@ -1,0 +1,130 @@
+/*날아다니는 벌 애니메이션*/
+.box {
+    position: absolute;
+    right: 50%;
+    top: 20%;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    offset: path('M 400 550 C 800 550 800 50 400 50 C 0 50 0 550 400 550') auto;
+    animation: moveto 12s infinite linear;
+}
+
+.box::after {
+    content: url(../img/bee.png);
+    display: block;
+}
+
+@keyframes moveto {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}
+
+/*전체 내용*/
+.menuwrap {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    justify-content: center;
+    background-color: beige;
+    align-items: center;
+    transition: all 1s ease-in-out;
+}
+
+.menuwrap-fold {
+    transform: translateX(-2100px);
+}
+
+.menu_left {
+    box-sizing: border-box;
+    position: relative;
+    color: white;
+    background-color: #ffbb2e;
+    padding: 50px;
+    height: 100vh;
+}
+
+.menu_top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 200px;
+}
+
+.menu_mid {
+    padding-bottom: 500px;
+}
+
+.lang_bal_icon {
+    z-index: 1;
+    display: none;
+}
+
+.menu_mid h1 {
+    font-size: 3em;
+    font-weight: 800;
+    position: absolute;
+    animation: slide 1s ease-in-out;
+}
+
+@keyframes slide {
+    from {
+        left: -100px;
+    }
+
+    to {
+        left: 50px;
+    }
+}
+
+.menu_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    float: right;
+    width: 40px;
+    cursor: pointer;
+}
+
+.menu_right {
+    margin: 0 auto;
+}
+
+.menu_list ul {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.menu_list ul a:first-child {
+    width: 200px;
+    font-size: 2.5em;
+    font-weight: 800;
+    padding-right: 50px;
+}
+
+.menu_list ul a:not(:first-child){
+    width: 100px;
+    text-align: center;
+    padding-right: 18px;
+}
+
+.menu_list ul a:not(:first-child):hover {
+    color: #ffbb2e;
+}
