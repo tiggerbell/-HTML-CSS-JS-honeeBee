@@ -34,7 +34,7 @@
     height: 100vh;
     z-index: 1000;
     overflow: hidden;
-    display: grid;
+    display: none;
     grid-template-columns: 1.2fr 2fr;
     justify-content: center;
     background-color: beige;
