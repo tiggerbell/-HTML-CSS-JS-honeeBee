@@ -1,171 +1,232 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>꿀단지</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <!-- 다크모드 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
-    <link rel="stylesheet" href="dark.css"/>
+    <!-- 리셋 css -->
+    <link rel="stylesheet" href="css/reset.css"/>
+    <!-- 종찬꺼 css -->
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/video.css"/>
+    <!-- 헤더css -->
+    <link rel="stylesheet" href="css/header.css"/>
+    <!-- 푸터 -->
+    <link rel="stylesheet" href="css/footer.css"/>
+    <!-- introduce.css -->
+    <link rel="stylesheet" href="css/scroll_photo.css"/>
+    <!-- 기부하기 css -->
+    <link rel="stylesheet" href="css/donate.css">
+    <!-- 공지사항 css -->
+    <link rel="stylesheet" href="css/notice.css">
+    <!-- 글자무빙css -->
+    <link rel="stylesheet" href="css/infinite_text.css">
+    <title>메인</title>
 </head>
-
 <body>
-    <!--header-->
-    <div id="headerwrap">
-        <div id="header">
-            <a href="main.html"><img src="./img/logo/logo.png" height="70px"></a>
-            <div id="nav">
-                <div class="nav_menu">
-                    <span>꿀단지</span>
-                    <ul class="dropdown-content">
-                        <li class="ten on"><a href="./10.html">10대 꿀단지</a></li>
-                        <li class="twenty"><a href="./20.html">20대 꿀단지</a></li>
-                        <li class="thirty"><a href="./30.html">30대 꿀단지</a></li>
-                    </ul>
-                </div>
-                <div class="nav_menu">
-                    <span>게임</span>
-                    <ul class="dropdown-content">
-                        <li><a href="#">제도알림</a></li>
-                        <li><a href="#">서비스홍보</a></li>
-                        <li><a href="#">어플홍보</a></li>
-                        <li><a href="#">기관홍보</a></li>
-                        <li><a href="#">기업홍보</a></li>
-                    </ul>
-                </div>
-                <div class="nav_menu">
-                    <span>알립니다</span>
-                    <ul class="dropdown-content">
-                        <li><a href="#">주알림</a></li>
-                        <li><a href="#">달알림</a></li>
-                        <li><a href="#">상시알림</a></li>
-                    </ul>
-                </div>
-                <div class="nav_menu">
-                    <span><a href="./Q.html">문의하기</a></span>
-                </div>
-            </div>
-            <div class="userInfo">
-                <button class="userIcon"><img src="./img/icon/account.png" alt=""></button>
-                <ul class="dropdown-content">
-                    <li><a href="./log.html">로그인</a></li>
-                    <li><a href="./membership.html">회원가입</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                    <li><a href="#">1:1 문의</a></li>
-                </ul>
-            </div>
-            
-            <div class="wrap">
-                <div class="darkmode">
-                    <div class="inner">
-                        <input type="radio" name="toggle" id="toggle-radio-light" checked><label for="toggle-radio-light" class="tolight"><i class="fas fa-sun tolight"></i></label>
-                        <input type="radio" name="toggle" id="toggle-radio-dark"><label for="toggle-radio-dark" class="todark"><i class="fas fa-moon todark"></i></label>
-                        <div class="darkmode-bg"></div>
+    <!-- 헤더 -->
+        <div id="headerwrap">
+            <div id="header">
+                <a href="./html/main.html"><img src="./logo/logo_text.png" height="70px"></a>
+                <div id="nav">
+                    <div class="nav_menu">
+                        <span>꿀단지</span>
+                        <ul class="dropdown-content">
+                            <li><a href="./html/ten.html">10대 꿀단지</a></li>
+                            <li><a href="./html/twenty.html">20대 꿀단지</a></li>
+                            <li><a href="./html/thirty.html">30대 꿀단지</a></li>
+                        </ul>
                     </div>
+                    <div class="nav_menu">
+                        <span>게임단지</span>
+                        <ul class="dropdown-content">
+                            <li><a href="#">공룡게임</a></li>
+                            <li><a href="./html/roulette.html">룰렛게임</a></li>
+                            <li><a href="#">(준비중)</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav_menu">
+                        <span>알림단지</span>
+                        <ul class="dropdown-content">
+                            <li><a href="./html/calendar.html">정보 캘린더</a></li>
+                            <li><a href="./html/event.html">행사 안내</a></li>
+                            <li><a href="#">나의 일정</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav_menu">
+                        <a href="./html/qna.html">문의하기</a>
+                    </div>
+                </div>
+                <div class="userInfo">
+                    <button class="userIcon"><img src="./icon/account.png" alt=""></button>
+                    <ul class="dropdown-content">
+                        <li><a href="./loghtml/log.html">로그인</a></li>
+                        <li><a href="./loghtml/membership.html">회원가입</a></li>
+                        <li><a href="#">마이페이지</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+    <!-- 동영상 -->
+        <div class="videoWrap">
+            <video id = "videoWrap" autoplay loop muted width="100%" height="100%" >
+                <source src="./img/honeyvideo.mp4"/>
+            </video>
+            <div class = "textBox">
+                <p class="text1">
+                    삶을
+                    </br>
+                    더 아름답게.
+                </p>
+                    </br>
+                <p class="text2">
+                    "혼자 두지 않겠습니다"
+                    </br>
+                    </br>
+                    "함께 꿀빨게 하겠습니다!"
+                </p>
+                    </br>
+                    </br>
+                <a href="#" class="btnMore">더보기</a>
+            </div>   
+        </div>
+    <!-- line -->
+    <div class="marquee_wrap">
+        <div class="marquee_box box1">
+            <span class="marquee_text"><img src="./img/infinite_text.png"></span>
+          </div>
+          <div class="marquee_box box2">
+            <span class="marquee_text"><img src="./img/infinite_text.png"></span>
+          </div>
+          <div class="marquee_box box3">
+            <span class="marquee_text"><img src="./img/infinite_text.png"></span>
+          </div>
     </div>
-
+    <!-- introduce -->
+    <div class="abc">
+        <div class="ab">
+           <div class="bbb">
+            우리들의 이야기</br>
+           </br>
+            우리의 삶이</br>
+            풍요롭게 성장할 수 있는</br>
+            지식과 경험의 꿀을 만들어갑니다.</br>
+           </div>
+        </div>
+        <div  class="ao">
+            <div id="home" class="dodo"><img src="./img/1한결.jpeg"></div>
+            <div class="dodo"><img src="./img/2종찬.jpeg"></div>
+            <div class="dodo"><img src="./img/3윤미.webp"></div>
+            <div class="dodo"><img src="./img/4교수님.png"></div>
+        </div>
     </div>
-    <!-- main -->
-    <div id="main">
-        <div id="main_area">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="./img/ex1.png"></div>
-                    <div class="swiper-slide"><img src="./img/ex2.jpg"></div>
+    <!-- 기부하기  -->
+    <div>
+        <div class="background ">
+            <div class="text_pack">
+                <p class="text123">Today</p>
+                <div class="bg_position">
+                    <p class="bg">
+                        <span class="p">07</span>
+                    </p>
+                    <p class="bg">
+                        <span class="p">04</span>
+                    </p>
                 </div>
-                <div class="swiper-pagination"></div>
+                <p class="text12"> 
+                    나눔을 통해 오늘을
+                    특별하고 소중한 날로
+                    만들어보세요.
+                </p>
+                <button class="bnt">기부안내</button>
             </div>
-            <div id="content">
-                <div class="content_area_1">
-                    <div class="info_hit">
-                        <h1>실시간 인기글</h1><a href="#">더보기</a>
-                        <ul>
-                            <li><a href="#"></a>1. 국민취업지원제도</li>
-                            <li><a href="#"></a>2. 청년내일채움공채</li>
-                            <li><a href="#"></a>3. 내일배움카드</li>
-                        </ul>
-                    </div>
-                    <div class="info_regional">
-                        <h1>지역별 꿀정보</h1><a href="#">더보기</a>
-                        <div class="area_list">
-                            <button><a href="#">서울</a></button>
-                            <button><a href="#">경기</a></button>
-                            <button><a href="#">인천</a></button>
-                            <button><a href="#">부산</a></button>
-                            <button><a href="#">대구</a></button>
-                            <button><a href="#">강원</a></button>
-                            <button><a href="#">광주</a></button>
-                            <button><a href="#">대전</a></button>
-                            <img src="./img/map_country.png">
-                        </div>
-                    </div>
-                </div>
-                <div class="content_area_2">
-                    <div></div>
-                </div>
+        </div>
+    </div>
+    <!-- 공지사항 -->
+    <p class="notice-main">꿀딴지의 소식을 확인하세요</p>
+    <div class="notice-wrap">
+        <div class="notice-c">
+            <div><h2>공지사항</h2></div>
+            <div class="cocoa">
+                <div class="text123" >제 1기 꿀딴지 3관왕</div>
+                <div>공지|해외꿀단지</div>
+            </div>
+            <div class="cocoa">
+                <div class="text123" >제 2기 꿀딴지 3관왕</div>
+                <div>공지|해외꿀단지</div>
+            </div>
+            <div class="cocoa">
+                <div class="text123" >제 3기 꿀딴지 3관왕</div>
+                <div>공지|해외꿀단지</div>
+            </div>
+        </div>
+        <div class="notice-t">
+            <div><h2>보도자료</h2></div>
+            <div class="cocoa">
+                <div class="text123" >꿀단지 재단,홈페이지 전면 리뉴얼 오픈</div>
+                <div>2022.06.23</div>
+            </div>
+            <div class="cocoa">
+                <div class="text123" >꿀단지 재단,"나만의 책꿈터"지원 사업 실시</div>
+                <div>2022.06.10</div>
+            </div>
+            <div class="cocoa">
+                <div class="text123" >꿀단지 재단, 제27기 해외 교환 장학생 모집</div>
+                <div>2022.04.06</div>
+                <!-- ?? -->
             </div>
         </div>
     </div>
     <!--footer-->
-    <div id="footerwrap">
-        <div id="footer">
-            <div class="footer_col">
-                <ul class="col_content">
-                    <li>Creators</li>
-                    <li><a href="#">크리에이터</a></li>
-                    <li><a href="#">스몰비즈니스</a></li>
-                </ul>
-                <ul class="col_content">
-                    <li>Partners</li>
-                    <li><a href="#">비즈니스 광고</a></li>
-                    <li><a href="#">스토어 개설</a></li>
-                    <li><a href="#">지역업체 등록</a></li>
-                </ul>
-                <ul class="col_content">
-                    <li>Developers</li>
-                    <li><a href="#">꿀단지 개발자센터</a></li>
-                    <li><a href="#">오픈API</a></li>
-                    <li><a href="#">오픈소스</a></li>
-                    <li><a href="#">꿀단지 D2</a></li>
-                    <li><a href="#">꿀단지 D2SF</a></li>
-                    <li><a href="#">꿀단지 랩스</a></li>
-                </ul>
-            </div>
-            <div class="footer_row">
-                <ul class="row_icon">
-                    <li><a href="#"><img src="./img/icon/sns_fb.png"></a></li>
-                    <li><a href="#"><img src="./img/icon/sns_insta.png"></a></li>
-                    <li><a href="#"><img src="./img/icon/sns_yt.png"></a></li>
-                    <li><a href="#"><img src="./img/icon/sns_twt.png"></a></li>
-                </ul>
-                <ul class="row_content">
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">인재채용</a></li>
-                    <li><a href="#">제휴제안</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">청소년보호정책</a></li>
-                    <li><a href="#">꿀단지 정책</a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul>
-            </div>
-            <p class="copyright">&copy; 꿀단지 Corp.</p>
+        <div id="footerwrap">
+            <div id="footer">
+                <div class="footer_col">
+                    <ul class="col_content">
+                        <li>Creators</li>
+                        <li><a href="#">크리에이터</a></li>
+                        <li><a href="#">스몰비즈니스</a></li>
+                    </ul>
+                    <ul class="col_content">
+                        <li>Partners</li>
+                        <li><a href="#">비즈니스 광고</a></li>
+                        <li><a href="#">스토어 개설</a></li>
+                        <li><a href="#">지역업체 등록</a></li>
+                    </ul>
+                    <ul class="col_content">
+                        <li>Developers</li>
+                        <li><a href="#">꿀단지 개발자센터</a></li>
+                        <li><a href="#">오픈API</a></li>
+                        <li><a href="#">오픈소스</a></li>
+                        <li><a href="#">꿀단지 D2</a></li>
+                        <li><a href="#">꿀단지 D2SF</a></li>
+                        <li><a href="#">꿀단지 랩스</a></li>
+                    </ul>
+                </div>
+                <div class="footer_row">
+                    <ul class="row_icon">
+                        <li><a href="#"><img src="./icon/sns_fb.png"></a></li>
+                        <li><a href="#"><img src="./icon/sns_insta.png"></a></li>
+                        <li><a href="#"><img src="./icon/sns_yt.png"></a></li>
+                        <li><a href="#"><img src="./icon/sns_twt.png"></a></li>
+                    </ul>
+                    <ul class="row_content">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">인재채용</a></li>
+                        <li><a href="#">제휴제안</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">청소년보호정책</a></li>
+                        <li><a href="#">꿀단지 정책</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+                <p class="copyright">&copy; 꿀단지 Corp.</p>
 
+            </div>
         </div>
-    </div>
-    <div id="moveTopBtn"><img src="./img/icon/topbtn.png"></div>
+        <div id="moveTopBtn"><img src="./icon/topbtn.png"></div>
 </body>
+<script src="index.js"></script>
 <script>
     //top 버튼
     const topBtn = document.querySelector('#moveTopBtn');
@@ -173,34 +234,41 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    //다크모드
-    document.addEventListener('DOMContentLoaded', function(){
-        //다크모드 토글
-        if(document.querySelector('.darkmode')){
-            if(localStorage.getItem("darkmode") == 'on'){
-                //다크모드 켜기
-                document.body.dataset.darkmode='on';
-                document.querySelector('#toggle-radio-dark').checked = true;
 
+</script>
+
+<script>
+    (function() {
+    // window.addEventListener('scroll', function() {
+    //     info.innerHTML = window.pageYOffset;
+    // });
+    let scrollEl = document.querySelector(".bbb");
+    let scrollEl2 = document.querySelector('.background ');
+    let scrollElTop = scrollEl.getBoundingClientRect().top + window.pageYOffset;
+    let scrollElTop2 = scrollEl2.getBoundingClientRect().top + window.pageYOffset;
+    window.addEventListener('scroll',function(){
+        console.log(window.scrollY)
+        console.log(scrollElTop)
+
+        if((window.scrollY - 200 ) > scrollElTop)
+        {
+            scrollEl.classList.add('fixed');
+            if((window.scrollY >= 5055)){
+                scrollEl.classList.add('end');
+                console.log(window.scrollY)
             }
-            //다크모드 이벤트 핸들러
-            document.querySelector('.darkmode').addEventListener("click", e=>{
-                if(e.target.classList.contains('todark')){
-                    document.body.dataset.darkmode='on';
-                    localStorage.setItem("darkmode", "on");
-                    //다크일때 고정색줘서 스크롤해도 안비쳐지게함 
-                    headerwrap.style.backgroundColor = "#232529"
-                }else if(e.target.classList.contains('tolight')){
-                    document.body.dataset.darkmode='off';
-                    localStorage.setItem("darkmode", "off");
-                    //안다크일때 
-                    headerwrap.style.backgroundColor = "white"
-                }
-            },false);
-        }else{
-            localStorage.removeItem("darkmode");
+            else{
+                scrollEl.classList.remove('end');
+            }
+        }
+        else{
+            scrollEl.classList.remove('fixed');
         }
 
     })
+})();
 </script>
+
+
+<script src="./4.js"></script>
 </html>
