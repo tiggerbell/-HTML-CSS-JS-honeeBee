@@ -10,7 +10,7 @@
 .ab{
     width: 50%;
     height: 100%;
-    border-right: 2px solid aliceblue;
+    border-right: 2px solid rgba(225, 225, 225, 0.3);
     z-index: 100;
     color:aliceblue;
     font-size: 40px;
@@ -58,6 +58,6 @@
     transition-duration:1s;
     overflow: hidden;
     /* margin-left: 100px; */
-    border-bottom: 2px solid aliceblue;
+    border-bottom: 2px solid rgba(225, 225, 225, 0.3);
     /* transition-delay:1s; */
 }

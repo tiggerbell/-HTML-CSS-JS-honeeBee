@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이다찾기</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <title>아이디찾기</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- 메뉴바 css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- css본 -->
+    <link rel="stylesheet" href="../css/아이디찾기.css">
+    
 </head>
 
 <body>
     <!--header-->
     <div id="headerwrap">
         <div id="header">
-            <a href="main.html"><img src="./img/logo/logo.png" height="70px"></a>
+            <a href="main.html"><img src="../logo/logo_text.png" height="70px"></a>
             <div id="nav">
                 <div class="nav_menu">
                     <span>꿀단지</span>
@@ -25,7 +26,6 @@
                         <li><a href="#">10대 꿀단지</a></li>
                         <li><a href="#">20대 꿀단지</a></li>
                         <li><a href="#">30대 꿀단지</a></li>
-                        sadsad
                         <li><a href="#">40대 꿀단지</a></li>
                         <li><a href="#">50대 꿀단지</a></li>
                         <li><a href="#">60대 꿀단지</a></li>
@@ -54,10 +54,10 @@
                 </div>
             </div>
             <div class="userInfo">
-                <button class="userIcon"><img src="./img/icon/account.png" alt=""></button>
+                <button class="userIcon"><img src="../icon/account.png" alt=""></button>
                 <ul class="dropdown-content">
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="./loghtml/membership.html">회원가입</a></li>
+                    <li><a href="../loghtml/log.html">로그인</a></li>
+                    <li><a href="../loghtml/membership.html">회원가입</a></li>
                     <li><a href="#">마이페이지</a></li>
                     <li><a href="#">1:1 문의</a></li>
                 </ul>
@@ -203,10 +203,10 @@
             </div>
             <div class="footer_row">
                 <ul class="row_icon">
-                    <li><a href="#"><img src="./img/icon/sns_fb.png"></a></li>
-                    <li><a href="#"><img src="./img/icon/sns_insta.png"></a></li>
-                    <li><a href="#"><img src="./img/icon/sns_yt.png"></a></li>
-                    <li><a href="#"><img src="./img/icon/sns_twt.png"></a></li>
+                    <li><a href="#"><img src="../icon/sns_fb.png"></a></li>
+                    <li><a href="#"><img src="../icon/sns_insta.png"></a></li>
+                    <li><a href="#"><img src="../icon/sns_yt.png"></a></li>
+                    <li><a href="#"><img src="../icon/sns_twt.png"></a></li>
                 </ul>
                 <ul class="row_content">
                     <li><a href="#">회사소개</a></li>
@@ -223,27 +223,8 @@
 
         </div>
     </div>
-    <div id="moveTopBtn"><img src="./img/icon/topbtn.png"></div>
+    <div id="moveTopBtn"><img src="../icon/topbtn.png"></div>
 </body>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
 <script>
     //top 버튼
     const topBtn = document.querySelector('#moveTopBtn');
@@ -251,8 +232,4 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 </script>
-<!-- 저는 이거를 수정했어요 -한결 -->
-<!-- 저는 이거를 수정했어요 -윤미 -->
-<!-- 저는 이거를 수정했어요 -종찬 -->
-<!-- sdgasdg -->
 </html>
