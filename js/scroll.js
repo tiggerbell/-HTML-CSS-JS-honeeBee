@@ -10,12 +10,14 @@ document.querySelector("body").onscroll = function(){
       
    }
    else if(window.pageYOffset == 0){
-    headerwrap.style.background="red" 
+    headerwrap.style.background="transparent" 
+    
    } 
    else {
       // upscroll code
       headerwrap.classList.remove("scroll-up")
       headerwrap.style.background="#fff" 
+      headerwrap.style.borderBottom = "1px solid #ffbb2e"
    }
    lastScrollTop = st <= 0 ? 0 : st;
 }
