@@ -3,7 +3,7 @@
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    height: 4500px;
+    height: 4320px;
     background-color: #ffbb2e;
     overflow: hidden;
 }
@@ -11,7 +11,7 @@
     width: 50%;
     height: 100%;
     border-right: 2px solid rgba(225, 225, 225, 0.3);
-    z-index: 100;
+    z-index: 50;
     color:aliceblue;
     font-size: 40px;
     
@@ -27,15 +27,15 @@
 }
 .bbb.fixed.end{
     position: relative;
-    top: 3800px;
+    top: 3450px;
 }
 .ao{
     width: 50%;
     height: 100%;
 }
 .dodo img{
-    width: 680px;
-    height: 800px;
+    width: 50%;
+    height: 60%;
     /* margin-top: 100px; */
     /* margin-left: 100px; */
     border-radius: 50%;
@@ -54,7 +54,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 25%;
+    height: 100vh;
     transition-duration:1s;
     overflow: hidden;
     /* margin-left: 100px; */
