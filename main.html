@@ -28,7 +28,6 @@
 </head>
 <body>
     <!-- 헤더 -->
-    <div id="cursor"></div>
     <div id="headerwrap">
         <div id="header">
             <a href="./html/main.html"><img src="./logo/logo.png" height="70px"></a>
@@ -117,19 +116,19 @@
                             </ul>
                             <ul>
                                 <a href="#"><li>알림단지</li></a>
-                                <a href="#"><li>정보 캘린더</li></a>
-                                <a href="#"><li>행사 안내</li></a>
+                                <a href="./html/calendar.html"><li>정보 캘린더</li></a>
+                                <a href="./html/event.html"><li>행사 안내</li></a>
                                 <a href="#"><li>나의 일정</li></a>
                             </ul>
                             <ul>
-                                <a href="#"><li>문의하기</li></a>
+                                <a href="./html/qna.html"><li>문의하기</li></a>
                             </ul>
                         </div>
                     </div>
                 </div>
         </div>
     </div>
-    </div>
+    </div> 
     <!-- 동영상 -->
     <div class="videoWrap">
         <video id="playvideo" autoplay loop muted width="100%">
@@ -293,50 +292,7 @@
     </div>
     <div id="moveTopBtn"><img src="./icon/topbtn.png" width="70px"></div>
 </body>
-<script>
-    //마우스 커서 
-    let cursor = document.querySelector("#cursor")
-    document.addEventListener("mousemove",(e)=>{
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        cursor.style.left = mouseX+"px";
-        cursor.style.top = mouseY+"px";
-    })
-
-    //top 버튼
-    const topBtn = document.querySelector('#moveTopBtn');
-    topBtn.onclick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    //팀원 소개 스크롤이벤트
-    (function () {
-        // window.addEventListener('scroll', function() {
-        //     info.innerHTML = window.pageYOffset;
-        // });
-        let scrollEl = document.querySelector(".bbb");
-        let scrollEl2 = document.querySelector('.background ');
-        let scrollElTop = scrollEl.getBoundingClientRect().top + window.pageYOffset;
-        let scrollElTop2 = scrollEl2.getBoundingClientRect().top + window.pageYOffset;
-        window.addEventListener('scroll', function () {
-            console.log(window.scrollY)
-            // console.log(scrollElTop)
-
-            if (window.scrollY > 1224) {
-                scrollEl.classList.add('fixed');
-                if ((window.scrollY >= 4450)) {
-                    scrollEl.classList.add('end');
-                    console.log(window.scrollY)
-                }
-                else {
-                    scrollEl.classList.remove('end');
-                }
-            }
-            else {
-                scrollEl.classList.remove('fixed');
-            }
-        })
-    })();
-</script>
-<script src="./js/sliede_menu.js"></script>
+<script src="./js/slide_menu.js"></script>
+<script src="./js/scroll.js"></script>
+<script src="./js/nav.js"></script>
 </html>

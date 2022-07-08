@@ -12,13 +12,9 @@
     const menu = document.querySelector(".menuwrap")
     const show = document.querySelector(".userIcon")
         xBtn.addEventListener("click", () => {
-            document.querySelector(".menuwrap").style.display = "none"
-            document.querySelector("body").classList.remove("slide-shown")
-            menu.classList.toggle("showmenu")
+            document.querySelector(".menuwrap").style.left = "100vw";
         }) 
         show.addEventListener("click",()=>{
-            document.querySelector(".menuwrap").style.display = "grid"
-            document.querySelector("body").classList.add("slide-shown")
-            menu.classList.toggle("showmenu");
+            document.querySelector(".menuwrap").style.left = "0";
         })
 

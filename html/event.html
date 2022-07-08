@@ -79,7 +79,6 @@
             transform: scale(1.2);
         }
     }
-
 </style>
 
 <body>
@@ -131,20 +130,24 @@
     }
     window.onload = showCards();
 
-    //좋아요 누르면 빨간 하트로 바뀜
-    const like = document.querySelectorAll(".heart_img")
-    like.forEach((tag) => {
-        tag.addEventListener("click", () => {
-            tag.classList.toggle("on")
-        })
-    })
-    console.log(like)
-
-    //좋아요 누른 카드를 보여주기
+    //좋아요 누르면 빨간 하트로 바뀜    
     const filledHeart = []
     const userLike = document.querySelector(".fv_list")
-    
-</script>
+    const likes = document.querySelectorAll(".heart_img")
+    likes.forEach((like) => {
+        like.addEventListener("click", () => {
+            if (like.classList.toggle("on")) {
+            }
+        })
+    })
 
+    //좋아요 누른 카드를 보여주기 
+    const likeon = like.filter(like.classList.contains("on"))
+    console.log("tt")
+    //             filledHeart.push()
+    //             console.log(filledHeart)
+    //         }else if(like.classList.remove("on"))
+
+</script>
 </html>
 <div></div>
