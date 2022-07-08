@@ -26,9 +26,9 @@
     <link rel="stylesheet" href="css/infinite_text.css" />
     <title>메인</title>
 </head>
-
 <body>
     <!-- 헤더 -->
+    <div id="cursor"></div>
     <div id="headerwrap">
         <div id="header">
             <a href="./html/main.html"><img src="./logo/logo.png" height="70px"></a>
@@ -291,9 +291,18 @@
 
         </div>
     </div>
-    <div id="moveTopBtn"><img src="./icon/topbtn.png"></div>
+    <div id="moveTopBtn"><img src="./icon/topbtn.png" width="70px"></div>
 </body>
 <script>
+    //마우스 커서 
+    let cursor = document.querySelector("#cursor")
+    document.addEventListener("mousemove",(e)=>{
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        cursor.style.left = mouseX+"px";
+        cursor.style.top = mouseY+"px";
+    })
+
     //top 버튼
     const topBtn = document.querySelector('#moveTopBtn');
     topBtn.onclick = () => {
@@ -329,11 +338,5 @@
         })
     })();
 </script>
-<<<<<<< HEAD
-
-<script src="./js/scroll.js"></script>
-<script src="./4.js"></script>
-=======
 <script src="./js/sliede_menu.js"></script>
->>>>>>> 40db6352985586f4020df5dda97db92845ce6184
 </html>
