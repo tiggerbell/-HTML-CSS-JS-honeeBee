@@ -64,21 +64,20 @@
     }
 
     .dropdown:hover .dropdown-content,
-    .userInfo:hover .dropdown-content {
+    .userIcon:hover .dropdown-content {
         display: block ;
     }
 
-    /*userInfo*/
-    .userInfo {
+    .userIcon{
         position: relative;
         display: inline-block;
-    }
-
-    .userIcon{
+        cursor: pointer;
         border: none;
+        width: 60px;
+        height: 60px;
         background-color: transparent;
-    }
-    
+    } 
+
     a{
         color: black;
-    }
+    }       

@@ -24,26 +24,24 @@
     }
 }
 
-/*전체 내용*/
+/*전체 내용*/   
 .menuwrap {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1000;
-    overflow: hidden;
+    /* display: grid; */
     display: none;
-    grid-template-columns: 1.2fr 2fr;
+    grid-template-columns: 1fr 2fr;
     justify-content: center;
-    background-color: beige;
     align-items: center;
+    background-color: beige;
     transition: all 1s ease-in-out;
 }
 
-.menuwrap-fold {
-    transform: translateX(-2100px);
+.showmenu {
+    transform: translateX(100%);
 }
 
 .menu_left {
@@ -62,19 +60,14 @@
 }
 
 .menu_mid {
-    padding-bottom: 500px;
-}
-
-.lang_bal_icon {
-    z-index: 1;
-    display: none;
+    padding-bottom: 480px;
 }
 
 .menu_mid h1 {
-    font-size: 3em;
-    font-weight: 800;
+    font-size: 3.3em;
+    font-weight: 700;
     position: absolute;
-    animation: slide 1s ease-in-out;
+    animation: slide 1s ease-in-out;    
 }
 
 @keyframes slide {
@@ -92,7 +85,7 @@
     justify-content: space-between;
     align-items: center;
 }
-
+    
 .closeBtn {
     position: absolute;
     top: 50px;
@@ -114,17 +107,22 @@
 
 .menu_list ul a:first-child {
     width: 200px;
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: 800;
     padding-right: 50px;
 }
 
 .menu_list ul a:not(:first-child){
-    width: 100px;
+    width: 150;
+    font-size: 1.7em;
     text-align: center;
-    padding-right: 18px;
+    padding-right: 30px;
 }
 
 .menu_list ul a:not(:first-child):hover {
     color: #ffbb2e;
 }
+.slide-hidden{
+    overflow: hidden;   
+}
+
