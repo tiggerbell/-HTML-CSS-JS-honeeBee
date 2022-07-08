@@ -5,8 +5,9 @@
         width: 100%;
         background-color: transparent;
         border-bottom: 1px solid rgba(225, 225, 225, 0.3);;
-        transition: top 0.3s;
-        z-index: 5;
+        /* transition: top 0.3s; */
+        transition: all 0.5s;
+        z-index: 200;
     }
     
     #headerwrap:hover{
@@ -80,4 +81,7 @@
 
     a{
         color: black;
-    }       
+    }
+    .scroll-up{
+        transform: translateY(-100px);
+    }
