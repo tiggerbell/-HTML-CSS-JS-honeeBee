@@ -79,12 +79,11 @@
             transform: scale(1.2);
         }
     }
-
 </style>
 
 <body>
     <div class="cardwrap">
-        <div class="card_item" hidden>
+        <div class="card_item">
             <img class="card_photo">
             <div>
                 <h3 class="card_title"></h3>
@@ -96,7 +95,6 @@
             </div>
         </div>
     </div>
-    <div class="fv_list"></div>
 </body>
 <script>
     //데이터는 객체 배열로 만들어서 불러오기
@@ -118,32 +116,28 @@
         },
     ]
 
+    //카드 복사하기
     function showCards() {
         let cardList = document.querySelector('.cardwrap');
         cards.forEach(function (card) {
-            let newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
+            let newCard = document.querySelector(".card_item").cloneNode(true);
             newCard.querySelector(".card_photo").src = '../img/' + card.card_photo;
             newCard.querySelector(".card_title").innerHTML = card.card_title;
             newCard.querySelector(".card_content").innerHTML = card.card_content;
-            newCard.hidden = false;
             cardList.appendChild(newCard);
         })
     }
+
     window.onload = showCards();
 
     //좋아요 누르면 빨간 하트로 바뀜
-    const like = document.querySelectorAll(".heart_img")
+    let like = document.querySelectorAll(".heart_img")
     like.forEach((tag) => {
+
         tag.addEventListener("click", () => {
             tag.classList.toggle("on")
         })
     })
-    console.log(like)
-
-    //좋아요 누른 카드를 보여주기
-    const filledHeart = []
-    const userLike = document.querySelector(".fv_list")
-    
 </script>
 
 </html>
