@@ -1,3 +1,4 @@
+// 메인 스크롤 이벤트
 var lastScrollTop = 0;
 
 
