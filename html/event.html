@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="../css/reset.css">
 </head>
 <style>
+    #alarmEvent{
+        display: flex;
+    }
+
     .cardwrap {
         display: flex;
         flex-wrap: wrap;
@@ -80,8 +84,14 @@
         }
     }
 </style>
-
 <body>
+    <nav>
+        <ul id="alarmEvent">
+            <li class="calendar on">정보 캘린더</li>
+            <li class="event">행사 안내</li>
+            <li class="myAlarm">나의 일정</li>
+        </ul>
+    </nav>
     <div class="cardwrap">
         <div class="card_item" hidden>
             <img class="card_photo">
@@ -101,16 +111,19 @@
     //데이터는 객체 배열로 만들어서 불러오기
     const cards = [
         {
+            idx: 1,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀2',
             card_content: '나는 내용2',
         },
         {
+            idx: 2,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀3',
             card_content: '나는 내용3',
         },
         {
+            idx: 3,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀4',
             card_content: '나는 내용4',
@@ -118,12 +131,15 @@
     ]
 
     function showCards() {
-        let cardList = document.querySelector('.cardwrap');
+        let cardList = document.querySelector('.cardwrap[hidden]');
         cards.forEach(function (card) {
             let newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
             newCard.querySelector(".card_photo").src = '../img/' + card.card_photo;
             newCard.querySelector(".card_title").innerHTML = card.card_title;
             newCard.querySelector(".card_content").innerHTML = card.card_content;
+            // newCard.querySelector(".heart_img").addEventListener("click", ()=>{
+            //     toggleLike(card.idx)
+            // })
             newCard.hidden = false;
             cardList.appendChild(newCard);
         })
@@ -136,17 +152,19 @@
     const likes = document.querySelectorAll(".heart_img")
     likes.forEach((like) => {
         like.addEventListener("click", () => {
-            if (like.classList.toggle("on")) {
-            }
+            like.classList.add("on")
+            filledHeart.push(likes[idx])              
         })
     })
 
+
     //좋아요 누른 카드를 보여주기 
-    const likeon = like.filter(like.classList.contains("on"))
-    console.log("tt")
-    //             filledHeart.push()
-    //             console.log(filledHeart)
-    //         }else if(like.classList.remove("on"))
+    // function setfilter(){
+    //     const 
+    // }
+    // const likeon = like.filter(like.classList.contains("on"))
+    // console.log("tt")
+            
 
 </script>
 </html>
