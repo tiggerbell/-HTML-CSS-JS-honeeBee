@@ -9,14 +9,20 @@
 </head>
 <style>
     .selectByUser {
-        width: 400px;
-        height: 250px;
-        padding: 30px;
-        background-color: #ffbb2e;
-        border-radius: 20px;
+        width: 600px;
+        height: 400px;
+        background: url(../img/memo.jpg) center no-repeat;
         margin: 0 auto;
     }
 
+    #selectList{
+        height: 340px;
+        position: relative;
+        padding: 90px 0 0 155px;
+        font-size: 1.2em;
+        overflow: hidden
+    }
+    
     @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
     * {
@@ -29,7 +35,7 @@
     /* 달력 */
     .rap {
         margin: 0 auto;
-        width: 820px;
+        width: 1000px;
         padding-top: 120px;
     }
 
@@ -96,8 +102,7 @@
 <body>
     <div class='rap'>
         <div class="selectByUser">
-            <ul>
-                <li class="selectList"></li>
+            <ul id="selectList">
             </ul>
         </div>
         <div class="calTop">
@@ -121,12 +126,12 @@
 </body>
 
 <script>
-    const jsonData = [
+    const eventData = [
         { "date": 1, "content": "<br><br>" },
         { "date": 2, "content": "<br><br>" },
         { "date": 3, "content": "<br><br>" },
         { "date": 4, "content": "<br><br>" },
-        { "date": 5, "content": "<br><br>" },
+        { "date": 5, "content": "LH 행복주택 접수(~7/20)<br><br>" },
         { "date": 6, "content": "<br><br>" },
         { "date": 7, "content": "<br><br>" },
         { "date": 8, "content": "<br><br>" },
@@ -136,7 +141,7 @@
         { "date": 12, "content": "<br><br>" },
         { "date": 13, "content": "<br><br>" },
         { "date": 14, "content": "<br><br>" },
-        { "date": 15, "content": "<br><br>" },
+        { "date": 15, "content": "훈련수당 신청일<br><br>" },
         { "date": 16, "content": "<br><br>" },
         { "date": 17, "content": "<br><br>" },
         { "date": 18, "content": "<br><br>" },
@@ -215,20 +220,19 @@
 
     //일정 이름 누르면 위에 있는 리스트에 들어가도록
     const events = []
-
     for (let idx = 1; idx < 36; idx++) {
         const date = document.querySelector(`#date_${idx}`)
         const new_div = document.createElement("div")
         new_div.style.backgroundColor = "transparent"
         new_div.style.fontWeight = "500"
-        new_div.style.fontSize = "0.8em"
+        new_div.style.fontSize = "1.2em"
+        new_div.style.border = "none"
 
 
         new_div.onclick = () => {
-            let user = document.querySelector('.selectList')
+            let user = document.querySelector('#selectList')
             user.innerHTML += new_div.innerHTML
         }
-
         if (date) date.appendChild(new_div)
 
         events.push({
@@ -238,12 +242,12 @@
         })
 
     }
-    
-    // console.log(events.element);
-    jsonData.forEach((dateObj, idx) => {
+
+    eventData.forEach((dateObj, idx) => {
         events[idx].content = dateObj.content
         events[idx].element.innerHTML = dateObj.content
     })
+
 </script>
 
 </html>

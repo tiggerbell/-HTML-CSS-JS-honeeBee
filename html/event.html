@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>행사안내</title>
+    <title>이벤트</title>
     <link rel="stylesheet" href="../css/reset.css">
 </head>
 <style>
-    #alarmEvent{
+    #alarmEvent {
         display: flex;
     }
 
@@ -42,12 +41,6 @@
         margin: 5px;
     }
 
-
-    .card_toggle {
-        display: flex;
-        justify-content: center;
-    }
-
     .card_btn {
         cursor: pointer;
         border: none;
@@ -55,7 +48,7 @@
         background-color: #ffbb2e;
     }
 
-    .heart_img {
+    .card_like {
         cursor: pointer;
         border: none;
         width: 50px;
@@ -85,23 +78,14 @@
     }
 </style>
 <body>
-    <nav>
-        <ul id="alarmEvent">
-            <li class="calendar on">정보 캘린더</li>
-            <li class="event">행사 안내</li>
-            <li class="myAlarm">나의 일정</li>
-        </ul>
-    </nav>
     <div class="cardwrap">
         <div class="card_item" hidden>
-            <img class="card_photo">
-            <div>
-                <h3 class="card_title"></h3>
-                <p class="card_content"></p>
-            </div>
-            <div class="card_toggle">
-                <button href="#" class="card_btn">확인하기</button>
-                <div class="heart_img"></div>
+            <div class="card_photo"></div>
+            <div class="card_info">
+                <div class="card_title"></div>
+                <div class="card_content"></div>
+                <div class="card_btn"></div>
+                <div class="card_like"></div>
             </div>
         </div>
     </div>
@@ -115,6 +99,8 @@
             card_photo: 'test.jpg',
             card_title: '나는 타이틀2',
             card_content: '나는 내용2',
+            card_btn: '확인하기',
+            card_like: ''
         },
         {
             idx: 2,
@@ -131,41 +117,45 @@
     ]
 
     function showCards() {
-        let cardList = document.querySelector('.cardwrap[hidden]');
+        const cardList = document.querySelector('.cardwrap');
         cards.forEach(function (card) {
-            let newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
+            const newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
             newCard.querySelector(".card_photo").src = '../img/' + card.card_photo;
             newCard.querySelector(".card_title").innerHTML = card.card_title;
             newCard.querySelector(".card_content").innerHTML = card.card_content;
-            // newCard.querySelector(".heart_img").addEventListener("click", ()=>{
-            //     toggleLike(card.idx)
-            // })
             newCard.hidden = false;
+
+            if (user_info.like.indexOf(card.idx > -1)) {
+                newCard.querySelector(".card_like").classList.add("on")
+            }
             cardList.appendChild(newCard);
         })
     }
     window.onload = showCards();
 
+
     //좋아요 누르면 빨간 하트로 바뀜    
-    const filledHeart = []
-    const userLike = document.querySelector(".fv_list")
-    const likes = document.querySelectorAll(".heart_img")
-    likes.forEach((like) => {
-        like.addEventListener("click", () => {
-            like.classList.add("on")
-            filledHeart.push(likes[idx])              
-        })
-    })
+    // const filledHeart = []
+    // const userLike = document.querySelector(".fv_list")
+    // const likes = document.querySelectorAll(".heart_img")
+    // likes.forEach((like) => {
+    //     like.addEventListener("click", () => {
+    //         like.classList.add("on")
+    //         filledHeart.push(likes[idx])
+    //     })
+    // })
 
 
-    //좋아요 누른 카드를 보여주기 
+
+    //좋아요 누른 카드를 보여주기
     // function setfilter(){
-    //     const 
+    //     const
     // }
     // const likeon = like.filter(like.classList.contains("on"))
     // console.log("tt")
-            
+
 
 </script>
+
 </html>
 <div></div>
