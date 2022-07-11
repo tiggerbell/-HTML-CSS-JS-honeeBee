@@ -15,6 +15,8 @@
         justify-content: center;
         align-items: center;
         padding-top: 100px;
+        width: 1400px;
+        margin: 0 auto;
     }
 
     .card_item {
@@ -36,20 +38,28 @@
     .card_title {
         font-size: 1.5em;
         font-weight: 700;
+        padding: 5px;
         margin: 5px;
     }
 
+    .card_content {
+        padding: 5px;
+        margin: 5px;
+    }
 
     .card_toggle {
         display: flex;
-        justify-content: center;
+        justify-content: right;
     }
 
     .card_btn {
         cursor: pointer;
+        width: 100px;
         border: none;
         border-radius: 10px;
+        font-size: 1.3em;
         background-color: #ffbb2e;
+        margin-right: 10px;
     }
 
     .heart_img {
@@ -58,6 +68,7 @@
         width: 50px;
         height: 50px;
         background: url('../icon/heart_off.png') center no-repeat;
+        margin-right: 20px;
     }
 
     .on {
@@ -80,15 +91,7 @@
             transform: scale(1.2);
         }
     }
-    .filterlike{
-        width: 100vw;
-        padding-top: 100px;
-    }
-    .likeCardBtn{
-        width: 50px;
-        height: 50px;
-        
-    }
+  
 </style>
 <body>
     <div id="headerwrap">
@@ -143,7 +146,7 @@
                 <h3 class="card_title"></h3>
                 <p class="card_content"></p>
             </div>
-            <div>
+            <div class="card_toggle">
                 <button href="#" class="card_btn">확인하기</button>
                 <div class="heart_img"></div>
             </div>
@@ -155,39 +158,75 @@
     const cards = [
         {
             idx:1,
-            card_photo: 'test.jpg',
-            card_title: '나는 타이틀1',
-            card_content: '나는 내용1',
+            card_photo: '01.jpg',
+            card_title: '보령머드축제',
+            card_content: '2022.7.16~8.15',
         },
         {
             idx:2,
-            card_photo: 'test.jpg',
-            card_title: '나는 타이틀2',
-            card_content: '나는 내용2',
+            card_photo: '02.jpg',
+            card_title: '대구 치맥 페스티벌',
+            card_content: '2022.7.6~7.10',
         },
         {
             idx:3,
-            card_photo: 'test.jpg',
-            card_title: '나는 타이틀3',
-            card_content: '나는 내용3',
+            card_photo: '03.png',
+            card_title: '디어마이광주',
+            card_content: '2022.8.31~9.5',
         },
         {
             idx:4,
-            card_photo: 'test.jpg',
-            card_title: '나는 타이틀4',
-            card_content: '나는 내용4',
+            card_photo: '04.jpg',
+            card_title: '신촌 물총축제',
+            card_content: '2022.7.30~7.31',
         },
         {
             idx:5,
-            card_photo: 'test.jpg',
-            card_title: '나는 타이틀5',
-            card_content: '나는 내용5',
+            card_photo: '05.jpg',
+            card_title: '인천 펜타포트 락 페스티벌',
+            card_content: '2022.8.5~8.7',
         },
         {
             idx:6,
-            card_photo: 'test.jpg',
-            card_title: '나는 타이틀6',
-            card_content: '나는 내용6',
+            card_photo: '06.jpg',
+            card_title: ' 씨네코리아엑스포',
+            card_content: '2022.10.6~10.8',
+        },
+        {
+            idx:7,
+            card_photo: '01.jpg',
+            card_title: '보령머드축제',
+            card_content: '2022.7.16~8.15',
+        },
+        {
+            idx:8,
+            card_photo: '02.jpg',
+            card_title: '대구 치맥 페스티벌',
+            card_content: '2022.7.6~7.10',
+        },
+        {
+            idx:9,
+            card_photo: '03.png',
+            card_title: '디어마이광주',
+            card_content: '2022.8.31~9.5',
+        },
+        {
+            idx:10,
+            card_photo: '04.jpg',
+            card_title: '신촌 물총축제',
+            card_content: '2022.7.30~7.31',
+        },
+        {
+            idx:11,
+            card_photo: '05.jpg',
+            card_title: '인천 펜타포트 락 페스티벌',
+            card_content: '2022.8.5~8.7',
+        },
+        {
+            idx:12,
+            card_photo: '06.jpg',
+            card_title: ' 씨네코리아엑스포',
+            card_content: '2022.10.6~10.8',
         },
     ]
 
