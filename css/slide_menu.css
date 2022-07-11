@@ -63,19 +63,9 @@
         font-size: 3.3em;
         font-weight: 700;
         position: absolute;
-        animation: slide 1s ease-in-out;
+        
     }
-
-    @keyframes slide {
-        from {
-            left: -100px;
-        }
-
-        to {
-            left: 50px;
-        }
-    }
-
+    
     .menu_bottom {
         display: flex;
         justify-content: space-between;
