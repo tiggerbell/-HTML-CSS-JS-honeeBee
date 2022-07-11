@@ -1,5 +1,6 @@
 .w-btn {
     position: relative;
+    top: 250px;
     border: none;
     display: inline-block;
     padding: 15px 30px;
@@ -8,7 +9,7 @@
     text-decoration: none;
     font-weight: 600;
     transition: 0.25s;
-    margin-left: 45%;
+    /* margin-left: 45%; */
 }
 
 .w-btn-outline {
@@ -23,6 +24,7 @@
 
 .w-btn-yellow {
     background-color: #fce205;
+    width: 300px;
     color: #6e6e6e;
 }
 
