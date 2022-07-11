@@ -6,21 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정보 캘린더</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/button.css">
+
 </head>
-<style>
+<style> 
     .selectByUser {
-        width: 600px;
-        height: 400px;
+        width: 1000px;
+        height: 750px;
         background: url(../img/memo.jpg) center no-repeat;
-        margin: 0 auto;
-    }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin: 0 auto; */
+        /* margin-right: 50px; */
+     }
 
     #selectList{
-        height: 340px;
+        text-align: center;
+        height: 300px;
+        width: 450px;
         position: relative;
-        padding: 90px 0 0 155px;
+        top : 200px;
+        /* padding: 290px 0 0 320px; */
         font-size: 1.2em;
-        overflow: hidden
+        overflow: auto;
     }
     
     @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
@@ -31,12 +41,16 @@
         list-style: none;
         box-sizing: border-box;
     }
-
+    body{
+        width: 100%;
+        height: 100%;
+    }
     /* 달력 */
     .rap {
         margin: 0 auto;
-        width: 1000px;
+        width: 100%;
         padding-top: 120px;
+        display: flex;
     }
 
     .dateHead {
@@ -65,6 +79,9 @@
         color: #222;
         font-weight: bold;
         min-height: 6rem;
+        max-height: 6rem;
+        min-width: 6rem;
+        max-width: 6rem;
         padding: .6rem .8rem;
         border-radius: .6rem;
         border: 1px solid #eee;
@@ -97,35 +114,92 @@
     .nextDay {
         transform: rotate(45deg);
     }
-</style>
+    .mytext{
+        /* margin-left: 43%; */
+        transform: translateY(150px);
+        font-size: xx-large;
+    }
+  
 
+</style>
 <body>
+    <div id="headerwrap">
+        <div id="header">
+            <a href="/main.html"><img src="../logo/logo.png" height="70px"></a>
+            <div id="nav">
+                <div class="dropdown">
+                    <button class="ddBtn">꿀단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/ten.html">10대 꿀단지</a>
+                        <a href="../html/twenty.html">20대 꿀단지</a>
+                        <a href="../html/thirty.html">30대 꿀단지</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">게임단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/game.html">꿀벌게임</a>
+                        <a href="../html/roulette.html">룰렛게임</a>
+                        <a href="#">(준비중)</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">알림단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/calendar.html">정보 캘린더</a>
+                        <a href="../html/event.html">행사 안내</a>
+                        <a href="#">나의 일정</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">문의하기</button>
+                    <div class="dropdown-content">
+                        <a href="../html/qna.html">자주하는 질문</a>
+                    </div>
+                </div>
+            </div>
+                <div class="userIcon">
+                    <img src="../icon/main_menu.png">
+                    <ul class="dropdown-content">
+                        <a href="../loghtml/log.html">로그인</a>
+                        <a href="../loghtml/membership.html">회원가입</a>
+                        <a href="../loghtml/myPage.html">마이페이지</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
     <div class='rap'>
         <div class="selectByUser">
-            <ul id="selectList">
-            </ul>
-        </div>
-        <div class="calTop">
-            <div class="btn prevDay"></div>
-            <h2 class='dateTitle'></h2>
-            <div class="btn nextDay"></div>
+            <p class="mytext">내 정보 담기</p>
+            <ul id="selectList"></ul>
+            <button class="w-btn w-btn-yellow" type="button">
+                저장하기
+            </button>
         </div>
 
-        <div class="grid dateHead">
-            <div>일</div>
-            <div>월</div>
-            <div>화</div>
-            <div>수</div>
-            <div>목</div>
-            <div>금</div>
-            <div>토</div>
-        </div>
+        <div id="캘린더">
+            <div class="calTop">
+                <div class="btn prevDay"></div>
+                <h2 class='dateTitle'></h2>
+                <div class="btn nextDay"></div>
+            </div>
 
-        <div id="date_grid" class="grid dateBoard"></div>
+            <div class="grid dateHead">
+                <div>일</div>
+                <div>월</div>
+                <div>화</div>
+                <div>수</div>
+                <div>목</div>
+                <div>금</div>
+                <div>토</div>
+            </div>
+            <div id="date_grid" class="grid dateBoard"></div>
+        </div>
     </div>
 </body>
 
 <script>
+    //date
     const eventData = [
         { "date": 1, "content": "<br><br>" },
         { "date": 2, "content": "<br><br>" },
@@ -137,7 +211,7 @@
         { "date": 8, "content": "<br><br>" },
         { "date": 9, "content": "<br><br>" },
         { "date": 10, "content": "<br><br>" },
-        { "date": 11, "content": "<br><br>" },
+        { "date": 11, "content": "삼성아카데미 (~7/29)<br><br>" },
         { "date": 12, "content": "<br><br>" },
         { "date": 13, "content": "<br><br>" },
         { "date": 14, "content": "<br><br>" },
@@ -147,14 +221,14 @@
         { "date": 18, "content": "<br><br>" },
         { "date": 19, "content": "<br><br>" },
         { "date": 20, "content": "<br><br>" },
-        { "date": 21, "content": "<br><br>" },
+        { "date": 21, "content": "청년교통마일리지신청<br><br>" },
         { "date": 22, "content": "<br><br>" },
         { "date": 23, "content": "<br><br>" },
         { "date": 24, "content": "<br><br>" },
-        { "date": 25, "content": "<br><br>" },
+        { "date": 25, "content": "미취업취업장려금신청<br><br>" },
         { "date": 26, "content": "<br><br>" },
         { "date": 27, "content": "<br><br>" },
-        { "date": 28, "content": "<br><br>" },
+        { "date": 28, "content": "올리브영빅세일<br><br>" },
         { "date": 29, "content": "<br><br>" },
         { "date": 30, "content": "<br><br>" },
         { "date": 31, "content": "<br><br>" },

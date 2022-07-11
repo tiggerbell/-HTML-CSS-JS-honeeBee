@@ -5,24 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 리셋 css -->
-    <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="stylesheet" href="../css/reset.css"/>
     <!-- 헤더 css -->
-    <link rel="stylesheet" href="/css/myPage.css"/>
+    <link rel="stylesheet" href="../css/header.css"/>
+    <link rel="stylesheet" href="../css/myPage.css"/>
+    <link rel="stylesheet" href="../css/footer.css"/>
     <title>프로필 수정</title>
 </head>
 <body>
-    <!--header-->
     <div id="headerwrap">
         <div id="header">
-            <a href="../main.html"><img src="../logo/logo_text.png" height="70px">꿀단지ID</a>
-            <div class="userInfo">
-                <button class="userIcon"><img src="../icon/more.png" alt=""></button>
-                <ul class="dropdown-content">
-                    <li><a href="../loghtml/log.html">로그인</a></li>
-                    <li><a href="../loghtml/membership.html">회원가입</a></li>
-                    <li><a href="#">마이페이지</a></li>
-                    <li><a href="#">1:1 문의</a></li>
-                </ul>
+            <a href="/main.html"><img src="../logo/logo.png" height="70px"></a>
+            <div id="nav">
+                <div class="dropdown">
+                    <button class="ddBtn">꿀단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/ten.html">10대 꿀단지</a>
+                        <a href="../html/twenty.html">20대 꿀단지</a>
+                        <a href="../html/thirty.html">30대 꿀단지</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">게임단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/game.html">꿀벌게임</a>
+                        <a href="../html/roulette.html">룰렛게임</a>
+                        <a href="#">(준비중)</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">알림단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/calendar.html">정보 캘린더</a>
+                        <a href="../html/event.html">행사 안내</a>
+                        <a href="#">나의 일정</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">문의하기</button>
+                    <div class="dropdown-content">
+                        <a href="../html/qna.html">자주하는 질문</a>
+                    </div>
+                </div>
+            </div>
+                <div class="userIcon">
+                    <img src="../icon/main_menu.png">
+                    <ul class="dropdown-content">
+                        <a href="../loghtml/log.html">로그인</a>
+                        <a href="../loghtml/membership.html">회원가입</a>
+                        <a href="../loghtml/myPage.html">마이페이지</a>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- underheader -->
@@ -89,13 +122,8 @@
                     <button>취 소</button>
                 </a>
             </div>
-
-           
         </div>
-
-
     </div>
-    <!--  -->
     <!--footer-->
     <div id="footerwrap">
         <div id="footer">

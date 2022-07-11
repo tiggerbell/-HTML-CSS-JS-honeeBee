@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트</title>
+    <title>행사안내</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <style>
-    #alarmEvent {
-        display: flex;
-    }
-
     .cardwrap {
         display: flex;
         flex-wrap: wrap;
@@ -41,6 +39,12 @@
         margin: 5px;
     }
 
+
+    .card_toggle {
+        display: flex;
+        justify-content: center;
+    }
+
     .card_btn {
         cursor: pointer;
         border: none;
@@ -48,7 +52,7 @@
         background-color: #ffbb2e;
     }
 
-    .card_like {
+    .heart_img {
         cursor: pointer;
         border: none;
         width: 50px;
@@ -77,84 +81,109 @@
         }
     }
 </style>
+
 <body>
+    <div id="headerwrap">
+        <div id="header">
+            <a href="main.html"><img src="../logo/logo.png" height="70px"></a>
+            <div id="nav">
+                <div class="dropdown">
+                    <button class="ddBtn">꿀단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/ten.html">10대 꿀단지</a>
+                        <a href="../html/twenty.html">20대 꿀단지</a>
+                        <a href="../html/thirty.html">30대 꿀단지</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">게임단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/game.html">꿀벌게임</a>
+                        <a href="../html/roulette.html">룰렛게임</a>
+                        <a href="#">(준비중)</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">알림단지</button>
+                    <div class="dropdown-content">
+                        <a href="../html/calendar.html">정보 캘린더</a>
+                        <a href="../html/event.html">행사 안내</a>
+                        <a href="#">나의 일정</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="ddBtn">문의하기</button>
+                    <div class="dropdown-content">
+                        <a href="../html/qna.html">자주하는 질문</a>
+                    </div>
+                </div>
+            </div>
+                <div class="userIcon">
+                    <img src="../icon/main_menu.png">
+                    <ul class="dropdown-content">
+                        <a href="../loghtml/log.html">로그인</a>
+                        <a href="../loghtml/membership.html">회원가입</a>
+                        <a href="../loghtml/myPage.html">마이페이지</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
     <div class="cardwrap">
-        <div class="card_item" hidden>
-            <div class="card_photo"></div>
-            <div class="card_info">
-                <div class="card_title"></div>
-                <div class="card_content"></div>
-                <div class="card_btn"></div>
-                <div class="card_like"></div>
+        <div class="card_item">
+            <img class="card_photo">
+            <div>
+                <h3 class="card_title"></h3>
+                <p class="card_content"></p>
+            </div>
+            <div class="card_toggle">
+                <button href="#" class="card_btn">확인하기</button>
+                <div class="heart_img"></div>
             </div>
         </div>
     </div>
-    <div class="fv_list"></div>
 </body>
 <script>
     //데이터는 객체 배열로 만들어서 불러오기
     const cards = [
         {
-            idx: 1,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀2',
             card_content: '나는 내용2',
-            card_btn: '확인하기',
-            card_like: ''
         },
         {
-            idx: 2,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀3',
             card_content: '나는 내용3',
         },
         {
-            idx: 3,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀4',
             card_content: '나는 내용4',
         },
     ]
 
+    //카드 복사하기
     function showCards() {
-        const cardList = document.querySelector('.cardwrap');
+        let cardList = document.querySelector('.cardwrap');
         cards.forEach(function (card) {
-            const newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
+            let newCard = document.querySelector(".card_item").cloneNode(true);
             newCard.querySelector(".card_photo").src = '../img/' + card.card_photo;
             newCard.querySelector(".card_title").innerHTML = card.card_title;
             newCard.querySelector(".card_content").innerHTML = card.card_content;
-            newCard.hidden = false;
-
-            if (user_info.like.indexOf(card.idx > -1)) {
-                newCard.querySelector(".card_like").classList.add("on")
-            }
             cardList.appendChild(newCard);
         })
     }
+
     window.onload = showCards();
 
+    //좋아요 누르면 빨간 하트로 바뀜
+    let like = document.querySelectorAll(".heart_img")
+    like.forEach((tag) => {
 
-    //좋아요 누르면 빨간 하트로 바뀜    
-    // const filledHeart = []
-    // const userLike = document.querySelector(".fv_list")
-    // const likes = document.querySelectorAll(".heart_img")
-    // likes.forEach((like) => {
-    //     like.addEventListener("click", () => {
-    //         like.classList.add("on")
-    //         filledHeart.push(likes[idx])
-    //     })
-    // })
-
-
-
-    //좋아요 누른 카드를 보여주기
-    // function setfilter(){
-    //     const
-    // }
-    // const likeon = like.filter(like.classList.contains("on"))
-    // console.log("tt")
-
-
+        tag.addEventListener("click", () => {
+            tag.classList.toggle("on")
+        })
+    })
 </script>
 
 </html>
