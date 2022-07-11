@@ -5,6 +5,7 @@ let number = [];
 
 // 
 write_Btn10.onclick= function(){
+    console.log(write_Btn10);
     document.querySelectorAll(".main_content")[0].style.display = "none"
     document.querySelectorAll(".main_content")[1].style. display = "block"
     document.querySelectorAll(".main_content")[2].style. display = "none"
@@ -90,14 +91,6 @@ list_btn2.onclick = function(){
     document.querySelectorAll(".main_content")[1].style.display = "none"
     document.querySelectorAll(".main_content")[2].style.display = "none"
 }
-<<<<<<< HEAD:write.js
-// 게시글 삭제
-list_delete.onclick = function(){
-=======
->>>>>>> 35824dafa970f1c1f1305a90bc3cd8f31f9d189e:js/board.js
-
-}
-
 
 
 

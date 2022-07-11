@@ -29,11 +29,11 @@ topBtn.onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-window.addEventListener('scroll', () =>{
-    if(window.scrollY > 600){
-        
-    }
-})
+// window.addEventListener('scroll', () =>{
+//     if(window.scrollY > 600){
+//         document.querySelector(".bbb").style.
+//     }
+// })
 
 //팀원 소개 스크롤이벤트
 (function () {
