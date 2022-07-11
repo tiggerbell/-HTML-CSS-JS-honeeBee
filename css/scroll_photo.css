@@ -3,9 +3,10 @@
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    height: 4320px;
+    height: 7000px;
     background-color: #ffbb2e;
     overflow: hidden;
+    /* scroll-behavior: smooth; */
 }
 .ab{
     width: 50%;
@@ -21,34 +22,35 @@
     top: 300px;
     left: 100px;
     font-size: 1.2em;
+    transform:translateY(+500px);
+    opacity: 0;
+    transition-duration:1s;
 }
 .bbb.fixed{
     position:fixed;
 }
 .bbb.fixed.end{
     position: relative;
-    top: 3450px;
+    top: 6250px;
 }
 .ao{
     width: 50%;
     height: 100%;
 }
 .dodo img{
-    width: 50%;
-    height: 60%;
-    /* margin-top: 100px; */
-    /* margin-left: 100px; */
-    border-radius: 50%;
-    transform:translateY(0);
+    /* position: relative;
+    right: 300px;
+    bottom: 300px; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 500px;
     transition-duration:1s;
-    opacity: 1;
     transition-timing-function: ease-in;
     }
-/* img:hover{
-    transform: translateY(300px);
-    transform:scale(0.5);
-    opacity: 0;
-} */
 .dodo{
     display: flex;
     align-items: center;
@@ -57,7 +59,34 @@
     height: 100vh;
     transition-duration:1s;
     overflow: hidden;
-    /* margin-left: 100px; */
+    opacity: 1;
     border-bottom: 2px solid rgba(225, 225, 225, 0.3);
-    /* transition-delay:1s; */
 }
+.momo{
+    height: 100vh;
+}
+.hoha{
+    border: none;
+}
+.img_move{
+    transform:translateY(0);
+    opacity: 1;
+}
+.img_size{
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+    width: 300px;
+    height: 300px;
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 20%;
+    overflow: hidden;
+    
+}
+/* .img_main{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    
+} */
