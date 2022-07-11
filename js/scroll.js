@@ -2,7 +2,7 @@
 var lastScrollTop = 0;
 
 document.querySelector("body").onscroll = function(){ 
-    console.log(document.documentElement.scrollTop)
+    // console.log(document.documentElement.scrollTop)
    var st = window.pageYOffset || document.documentElement.scrollTop; 
    if (st > lastScrollTop){
       // downscroll code
@@ -47,19 +47,60 @@ topBtn.onclick = () => {
     // window.addEventListener('scroll', function() {
     //     info.innerHTML = window.pageYOffset;
     // });
-    let scrollEl = document.querySelector(".bbb");
-    let scrollEl2 = document.querySelector('.background ');
-    let scrollElTop = scrollEl.getBoundingClientRect().top + window.pageYOffset;
+    let scrollEl = document.querySelector(".bbb")
+    let scrollEl1 = document.querySelectorAll(".dodo")[0];
+    let scrollEl2 = document.querySelectorAll(".dodo")[1];
+    let scrollEl3 = document.querySelectorAll(".dodo")[2];
+    let scrollEl4 = document.querySelectorAll(".dodo")[3];
+    let scrollElTop1 = scrollEl1.getBoundingClientRect().top + window.pageYOffset;
     let scrollElTop2 = scrollEl2.getBoundingClientRect().top + window.pageYOffset;
+    let scrollElTop3 = scrollEl3.getBoundingClientRect().top + window.pageYOffset;
+    let scrollElTop4 = scrollEl4.getBoundingClientRect().top + window.pageYOffset;
     window.addEventListener('scroll', function () {
-        console.log(window.scrollY)
-        // console.log(scrollElTop)
+        // console.log(document.querySelectorAll(".dodo")[0].getBoundingClientRect().top + window.pageYOffset)
+        // console.log(window.scrollY)
+        console.log((window.scrollY+550)-scrollElTop1 > 0)
+        // console.log(window.scrollY-scrollElTop2)
+        // console.log(window.scrollY-scrollElTop3)
+        // console.log(window.scrollY-scrollElTop4)
+        if(window.scrollY > 1226){
+            document.querySelector(".bbb").classList.add("img_move")
+        }
+        console.log((window.scrollY+800)-scrollElTop1)
+        if((window.scrollY+800)-scrollElTop1 > 0){
+            document.querySelectorAll(".img_size")[0].style.width = (window.scrollY+600)-scrollElTop1+"px"
+            document.querySelectorAll(".img_size")[0].style.height = (window.scrollY+600)-scrollElTop1+"px"
+        }
+        if((window.scrollY+800)-scrollElTop2 > 0){
+            document.querySelectorAll(".img_size")[1].style.width = (window.scrollY+600)-scrollElTop2+"px"
+            document.querySelectorAll(".img_size")[1].style.height = (window.scrollY+600)-scrollElTop2+"px"
+        }
+        if((window.scrollY+800)-scrollElTop3 > 0){
+            document.querySelectorAll(".img_size")[2].style.width = (window.scrollY+600)-scrollElTop3+"px"
+            document.querySelectorAll(".img_size")[2].style.height = (window.scrollY+600)-scrollElTop3+"px"
+        }
+        if((window.scrollY+800)-scrollElTop4 > 0){
+            document.querySelectorAll(".img_size")[3].style.width = (window.scrollY+600)-scrollElTop4+"px"
+            document.querySelectorAll(".img_size")[3].style.height = (window.scrollY+600)-scrollElTop4+"px"
+        }
 
+        // if (window.scrollY > 2022){
+        //     document.querySelectorAll(".dodo")[0].classList.add("img_move")
+        // }
+        // if (window.scrollY > 2800){
+        //     document.querySelectorAll(".dodo")[1].classList.add("img_move")
+        // }
+        // if (window.scrollY > 3800){
+        //     document.querySelectorAll(".dodo")[2].classList.add("img_move")
+        // }
+        // if (window.scrollY > 4800){
+        //     document.querySelectorAll(".dodo")[3].classList.add("img_move")
+        // }
         if (window.scrollY > 1224) {
             scrollEl.classList.add('fixed');
-            if ((window.scrollY >= 4450)) {
+            if ((window.scrollY >= 7130)) {
                 scrollEl.classList.add('end');
-                console.log(window.scrollY)
+                // console.log(window.scrollY)
             }
             else {
                 scrollEl.classList.remove('end');

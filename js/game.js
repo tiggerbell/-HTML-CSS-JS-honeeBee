@@ -100,21 +100,26 @@ function 프레임마다실행할거(){
     //스코어
     ctx.font = "20px malgun gothic"; //폰트의 크기, 글꼴체 지정      
     ctx.fillStyle = "rgba(255,0,255,1)"; //색상지정
-    ctx.fillText("score : " + timer,5,30);   
-    
-    //장애물 생성
-    if (timer % 60 === 0){
+    ctx.fillText("score : " + timer,5,30);//x,y값   
+    //일시정지버튼
+
+    //random값 지정
+    // 70 <= random <= 100
+    const rand1 = Math.floor(Math.random() * 101) + 70;
+    // 70<= random <= 120
+    const rand2 = Math.floor(Math.random() * 121) + 70;
+
+    //장애물 생성-------
+    if (timer % rand1 === 0){
         var cactus = new Cactus();
         cactus여러개.push(cactus);    
     }
     
-    if (timer % 150 === 0){
+    if (timer % rand2 === 0){
         var dragon = new Dragon();
         드래곤여러개.push(dragon);
     }
-    //장애물 생성---
-
-
+    //------장애물 생성
     cactus여러개.forEach((cactus, i, o)=>{
         //x좌표가 0미만이면 제거
         if(cactus.x<0){
@@ -157,9 +162,6 @@ function 프레임마다실행할거(){
         점프중 = false;
         점프timer = 0;
     }
-    
-    
-
 
 }
 //--게임실행종료
@@ -191,12 +193,9 @@ function 충돌하냐드래곤(dino, dragon){
     }
 }
 //--충돌확인 종료
+//일시정지 버튼함수
 
-
-
-
-
-
+//점프함수
 var 점프중 = false;
 document.addEventListener('keydown', function(e){
     if(e.code ==='Space'){
