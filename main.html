@@ -45,7 +45,7 @@
                     <div class="dropdown-content">
                         <a href="./html/game.html">꿀벌게임</a>
                         <a href="./html/roulette.html">룰렛게임</a>
-                        <a href="#">(준비중)</a>
+                        <a href="#" onclick="alert(`준비 중입니다`)">(준비중)</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -65,17 +65,18 @@
             </div>
                 <div class="userIcon">
                     <img src="../icon/main_menu.png">
-                    <ul class="dropdown-content">
-                        <a href="./loghtml/log.html">로그인</a>
-                        <a href="./loghtml/membership.html">회원가입</a>
-                        <a href="./loghtml/myPage.html">마이페이지</a>
-                    </ul>
                 </div>
                 <div class="menuwrap">
                     <div class="box"></div>
+                    <div class="menuBoxWrap">
                     <div class="menu_left">
                         <div class="menu_top">
                             <div><img src="../logo/logo.png" height="60px"></div>
+                            <div class="forUser">
+                                <span><a href="./loghtml/log.html">로그인</a></span>
+                                <span><a href="./loghtml/membership_1.html">회원가입</a></span>
+                                <span><a href="./loghtml/myPage.html">마이페이지</a></span>
+                            </div>
                         </div>
                         <div class="menu_mid">
                             <h1>사람들이<br>
@@ -84,15 +85,8 @@
                             </h1>
                         </div>
                         <div class="menu_bottom">
-                            <div>
-                                <span><a href="./loghtml/log.html">로그인</a></span>
-                                <span><a href="./loghtml/membership_1.html">회원가입</a></span>
-                                <span><a href="./loghtml/myPage.html">마이페이지</a></span>
-                            </div>
-                            <div>
-                                <a href="#"><img src="../icon/sns_yt.png" width="50px"></a>
-                                <a href="#"><img src="../icon/sns_fb.png" width="50px"></a>
-                            </div>
+                            <a href="#"><img src="../icon/sns_yt.png" width="50px"></a>
+                            <a href="#"><img src="../icon/sns_fb.png" width="50px"></a>
                         </div>
                     </div>
                     <img class="closeBtn" src="../icon/close.png">
@@ -123,6 +117,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                
         </div>
     </div>
     </div> 
@@ -146,7 +142,7 @@
             </p>
             </br>
             </br>
-            <a href="#" class="btnMore">더보기</a>
+            <a href="#" class="btnMore" onclick="movetomain()">더보기</a>
         </div>
     </div>
     <!-- line -->
@@ -292,4 +288,5 @@
 <script src="./js/slide_menu.js"></script>
 <script src="./js/scroll.js"></script>
 <script src="./js/nav.js"></script>
+<script src="./js/donate.js"></script>
 </html>

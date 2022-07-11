@@ -27,17 +27,21 @@
 
     /*전체 내용*/
     .menuwrap {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        justify-content: center;
-        align-items: center;
+        visibility: hidden;
         position: absolute;
         top: 0;
+        right: 0;
+        bottom: 0;  
         left: 100vw;
         width: 100vw;
         height: 100vh;
-        background-color: beige;
         transition: all 1s ease-in-out;
+    }
+
+    .menuBoxWrap{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        background-color: beige;
     }
 
     .menu_left {
@@ -52,9 +56,21 @@
     .menu_top {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding-bottom: 200px;
     }
 
+    .forUser{
+        position: relative;
+        font-size: 1.3em;
+    }
+
+    .forUser span a{
+        padding: 0 10px;
+    }
+    .forUser span a::after:not(:last-child){
+        content: "|";
+    }
     .menu_mid {
         padding-bottom: 480px;
     }
@@ -63,18 +79,12 @@
         font-size: 3.3em;
         font-weight: 700;
         position: absolute;
-        
     }
     
     .menu_bottom {
         display: flex;
-        justify-content: space-between;
+        justify-content: left;
         align-items: center;
-    }
-
-    .menu_bottom div span {
-        font-size: 1.3em;
-        padding: 0 15px;
     }
 
     .closeBtn {
@@ -87,7 +97,10 @@
     }
 
     .menu_right {
+        display: flex;
         margin: 0 auto;
+        justify-content: center;
+        align-items: center;
     }
 
     .menu_list ul {

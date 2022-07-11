@@ -1,24 +1,22 @@
-body{
-    margin: 0;
-}
-
-.background{
-    background: url("https://foundation.miraeasset.com/common_ko/images/main5-bg.jpg")no-repeat;
+.background {
+    background: url("https://foundation.miraeasset.com/common_ko/images/main5-bg.jpg") fixed no-repeat;
     width: 100%;
-    height: 700px;
+    height: 750px;
     color: aliceblue;
     font-weight: 700;
 }
-.text12{
+
+.text12 {
     font-size: 48px;
     line-height: 1.3;
     width: 420px;
 }
-.text123{
+
+.text123 {
     font-size: 20px;
 }
 
-.bnt{
+.bnt {
     font-weight: 700;
     font-size: 20px;
     padding: 15px;
@@ -32,26 +30,29 @@ body{
     border-radius: 32px;
 
 }
-.bg{
+
+.bg {
     background: url("https://foundation.miraeasset.com/common_ko/images/date-bg.svg");
     width: 138px;
     height: 137px;
 }
-.p{
+
+.p {
     font-size: 32px;
     position: relative;
     top: 40px;
     left: 40px;
 
-    
+
 }
-.bg_position{
+
+.bg_position {
     display: flex;
 }
-.text_pack{
+
+.text_pack {
     position: relative;
     top: 5%;
     left: 140px;
+    margin-top: 10%;
 }
-
-

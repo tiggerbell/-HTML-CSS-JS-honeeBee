@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,8 @@
     .cardwrap {
         display: flex;
         flex-wrap: wrap;
-        margin: 30px;
+        justify-content: center;
+        align-items: center;
         padding-top: 100px;
     }
 
@@ -80,8 +80,16 @@
             transform: scale(1.2);
         }
     }
+    .filterlike{
+        width: 100vw;
+        padding-top: 100px;
+    }
+    .likeCardBtn{
+        width: 50px;
+        height: 50px;
+        
+    }
 </style>
-
 <body>
     <div id="headerwrap">
         <div id="header">
@@ -127,15 +135,15 @@
                     </ul>
                 </div>
             </div>
-        </div>
+    </div>
     <div class="cardwrap">
-        <div class="card_item">
-            <img class="card_photo">
+        <div class="card_item" hidden>
+            <div><img class="card_photo"></div>
             <div>
                 <h3 class="card_title"></h3>
                 <p class="card_content"></p>
             </div>
-            <div class="card_toggle">
+            <div>
                 <button href="#" class="card_btn">확인하기</button>
                 <div class="heart_img"></div>
             </div>
@@ -146,19 +154,40 @@
     //데이터는 객체 배열로 만들어서 불러오기
     const cards = [
         {
+            idx:1,
+            card_photo: 'test.jpg',
+            card_title: '나는 타이틀1',
+            card_content: '나는 내용1',
+        },
+        {
+            idx:2,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀2',
             card_content: '나는 내용2',
         },
         {
+            idx:3,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀3',
             card_content: '나는 내용3',
         },
         {
+            idx:4,
             card_photo: 'test.jpg',
             card_title: '나는 타이틀4',
             card_content: '나는 내용4',
+        },
+        {
+            idx:5,
+            card_photo: 'test.jpg',
+            card_title: '나는 타이틀5',
+            card_content: '나는 내용5',
+        },
+        {
+            idx:6,
+            card_photo: 'test.jpg',
+            card_title: '나는 타이틀6',
+            card_content: '나는 내용6',
         },
     ]
 
@@ -166,10 +195,11 @@
     function showCards() {
         let cardList = document.querySelector('.cardwrap');
         cards.forEach(function (card) {
-            let newCard = document.querySelector(".card_item").cloneNode(true);
+            let newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
             newCard.querySelector(".card_photo").src = '../img/' + card.card_photo;
             newCard.querySelector(".card_title").innerHTML = card.card_title;
             newCard.querySelector(".card_content").innerHTML = card.card_content;
+            newCard.hidden = false;
             cardList.appendChild(newCard);
         })
     }
@@ -177,13 +207,14 @@
     window.onload = showCards();
 
     //좋아요 누르면 빨간 하트로 바뀜
-    let like = document.querySelectorAll(".heart_img")
+    const filledHeart = []
+    const like = document.querySelectorAll(".heart_img")
     like.forEach((tag) => {
-
         tag.addEventListener("click", () => {
             tag.classList.toggle("on")
         })
     })
+    
 </script>
 
 </html>

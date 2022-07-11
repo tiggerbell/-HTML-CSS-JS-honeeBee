@@ -11,10 +11,19 @@
     //X 아이콘 누르면 오른쪽 슬라이드 하며 메인 페이지 다시 보여줌
     const menu = document.querySelector(".menuwrap")
     const show = document.querySelector(".userIcon")
-        xBtn.addEventListener("click", () => {
-            document.querySelector(".menuwrap").style.left = "100vw";
-        }) 
-        show.addEventListener("click",()=>{
-            document.querySelector(".menuwrap").style.left = "0";
-        })
 
+    show.addEventListener("click",()=>{
+            document.querySelector(".menuwrap").style.left = "0"
+            document.querySelector(".menuwrap").style.visibility = "visible"
+            document.querySelector("body").style.overflow = "hidden"
+            document.querySelector("body").style.height = "100%"
+        })                                                
+
+        xBtn.addEventListener("click", () => {
+            document.querySelector(".menuwrap").style.left = "100vw"
+            document.querySelector(".menuwrap").style.visibility = "hidden"
+            document.querySelector("body").style.overflow = ""
+            document.querySelector("body").style.height = ""
+        }) 
+        
+    
