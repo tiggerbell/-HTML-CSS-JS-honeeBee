@@ -126,6 +126,9 @@
             opacity: 1;
         }
     }
+    ::-webkit-scrollbar {
+        display: none;  
+    }
     .result_position{
         height: 100%;
         width: 500px;
@@ -236,8 +239,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="main-line"></div> -->
-            <!-- <hr> -->
             <div class="show hide">
                 <ul class="showResult">
                     <li class="dado" v-for="(h, idx) in history">{{h}}</li>
@@ -317,14 +318,17 @@
         }).mount("#app");
         let num = 1
         document.querySelector(".play-btn").onclick = function(){
+            document.querySelector(".back_result").disabled = true;
             setTimeout(()=>{
                 document.querySelector(".result-value").innerHTML = document.querySelectorAll(".dado")[document.querySelectorAll("li").length-1].innerHTML
+                document.querySelector(".back_result").disabled = false;
             },4990)
             setTimeout(()=>{
                 document.querySelectorAll(".dado")[document.querySelectorAll("li").length-1].innerHTML= num+"회"+document.querySelectorAll(".dado")[document.querySelectorAll("li").length-1].innerHTML;
                 num++
+                
             },5000)
-            document.querySelector(".back_result").disabled = false;
+            
         }   
         document.querySelector(".back_result").onclick = function(){
             document.querySelector(".main").classList.add("hide")
