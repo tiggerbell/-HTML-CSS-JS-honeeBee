@@ -101,18 +101,23 @@ function 프레임마다실행할거(){
     ctx.font = "20px malgun gothic"; //폰트의 크기, 글꼴체 지정      
     ctx.fillStyle = "rgba(255,0,255,1)"; //색상지정
     ctx.fillText("score : " + timer,5,30);   
-    
+    //random값 지정
+    // 70 <= random <= 100
+    const rand1 = Math.floor(Math.random() * 101) + 70;
+    // 70<= random <= 120
+    const rand2 = Math.floor(Math.random() * 121) + 70;
+
     //장애물 생성
-    if (timer % 60 === 0){
+    if (timer % rand1 === 0){
         var cactus = new Cactus();
         cactus여러개.push(cactus);    
     }
     
-    if (timer % 150 === 0){
+    if (timer % rand2 === 0){
         var dragon = new Dragon();
         드래곤여러개.push(dragon);
     }
-    //장애물 생성---
+    //------장애물 생성
 
 
     cactus여러개.forEach((cactus, i, o)=>{
