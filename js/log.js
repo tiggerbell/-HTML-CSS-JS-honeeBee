@@ -18,8 +18,8 @@ function color() {
 
 function moveToMain(){
     //로그인시 메인 홈페이지로 이동
+    alert("로그인성공");
     location.replace("../main.html");
-    alert("환영합니다.");
 }
 
 loginId.addEventListener('keyup', color);
