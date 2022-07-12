@@ -48,17 +48,22 @@ topBtn.onclick = () => {
     let scrollElTop2 = scrollEl2.getBoundingClientRect().top + window.pageYOffset;
     let scrollElTop3 = scrollEl3.getBoundingClientRect().top + window.pageYOffset;
     let scrollElTop4 = scrollEl4.getBoundingClientRect().top + window.pageYOffset;
+    let scrollElBottom =scrollEl4.getBoundingClientRect().bottom + window.pageYOffset;
+    // console.log(window.scrollY-scrollElBottom)
     window.addEventListener('scroll', function () {
         // console.log(document.querySelectorAll(".dodo")[0].getBoundingClientRect().top + window.pageYOffset)
         // console.log(window.scrollY)
-        console.log((window.scrollY+550)-scrollElTop1 > 0)
         // console.log(window.scrollY-scrollElTop2)
         // console.log(window.scrollY-scrollElTop3)
         // console.log(window.scrollY-scrollElTop4)
-        if(window.scrollY > 1226){
-            document.querySelector(".bbb").classList.add("img_move")
-        }
-        console.log((window.scrollY+800)-scrollElTop1)
+        // console.log(window.scrollY-scrollElTop4)
+        // if(window.scrollY > 1226){
+        //     document.querySelector(".bbb").classList.add("img_move")
+        // }
+        // else if(window.scrollY > 3000){
+        //     document.querySelector(".bbb").classList.remove("img_move")
+        // }
+        // console.log((window.scrollY+800)-scrollElTop1)
         if((window.scrollY+800)-scrollElTop1 > 0){
             document.querySelectorAll(".img_size")[0].style.width = (window.scrollY+600)-scrollElTop1+"px"
             document.querySelectorAll(".img_size")[0].style.height = (window.scrollY+600)-scrollElTop1+"px"
@@ -90,7 +95,7 @@ topBtn.onclick = () => {
         // }
         if (window.scrollY > 1224) {
             scrollEl.classList.add('fixed');
-            if ((window.scrollY >= 7130)) {
+            if ((window.scrollY-scrollElTop4)-560 >0) {
                 scrollEl.classList.add('end');
                 // console.log(window.scrollY)
             }
