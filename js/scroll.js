@@ -1,3 +1,9 @@
+//더보기 누르면 스크롤 이동
+const seeMore = document.querySelector('.btnMore')
+seeMore.onclick = () => {
+    window.scrollTo({ top: 1350, behavior: 'smooth' });
+}
+
 // 메인 스크롤 이벤트
 var lastScrollTop = 0;
 
@@ -21,20 +27,6 @@ document.querySelector("body").onscroll = function(){
    }
    lastScrollTop = st <= 0 ? 0 : st;
 }
-
-// //더보기 누르면 스크롤 이동
-// const seeMore = document.querySelector('.btnMore')
-// seeMore.addEventListener("click",()=>{
-//     let value = window.scrollY
-//     value
-//     if(value > 400){
-//         mainText.style.animation = "disappear 1s ease-in-out forwards"
-//     }
-//     else{
-//         mainText.style.animation = 'slide 1s ease-out'
-//     }
-//     })
-// })
 
 //top 버튼
 const topBtn = document.querySelector('#moveTopBtn');

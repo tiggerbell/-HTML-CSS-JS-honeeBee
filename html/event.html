@@ -20,6 +20,7 @@
     }
 
     .card_item {
+        cursor: pointer;
         box-sizing: border-box;
         width: 380px;
         height: 500px;
@@ -28,12 +29,28 @@
         padding: 20px;
         margin: 20px;
     }
+    
+    .card_item:hover {
+        animation: zoom 0.2s linear;
+    }
+        
+    @keyframes zoom {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.1) ;
+            }
+            
+        }
 
     .card_photo {
+        cursor: pointer;
         width: 330px;
         height: 320px;
         border-radius: 10px;
     }
+
 
     .card_title {
         font-size: 1.5em;
@@ -60,6 +77,11 @@
         font-size: 1.3em;
         background-color: #ffbb2e;
         margin-right: 10px;
+    }
+
+    .btnAni{
+        background-color: #fff;
+        border: 1px solid #ffbb2e;
     }
 
     .heart_img {
@@ -153,108 +175,30 @@
         </div>
     </div>
 </body>
+<script src="../js/event.js"></script>
 <script>
-    //데이터는 객체 배열로 만들어서 불러오기
-    const cards = [
-        {
-            idx:1,
-            card_photo: '01.jpg',
-            card_title: '보령머드축제',
-            card_content: '2022.7.16~8.15',
-        },
-        {
-            idx:2,
-            card_photo: '02.jpg',
-            card_title: '대구 치맥 페스티벌',
-            card_content: '2022.7.6~7.10',
-        },
-        {
-            idx:3,
-            card_photo: '03.png',
-            card_title: '디어마이광주',
-            card_content: '2022.8.31~9.5',
-        },
-        {
-            idx:4,
-            card_photo: '04.jpg',
-            card_title: '신촌 물총축제',
-            card_content: '2022.7.30~7.31',
-        },
-        {
-            idx:5,
-            card_photo: '05.jpg',
-            card_title: '인천 펜타포트 락 페스티벌',
-            card_content: '2022.8.5~8.7',
-        },
-        {
-            idx:6,
-            card_photo: '06.jpg',
-            card_title: ' 씨네코리아엑스포',
-            card_content: '2022.10.6~10.8',
-        },
-        {
-            idx:7,
-            card_photo: '01.jpg',
-            card_title: '보령머드축제',
-            card_content: '2022.7.16~8.15',
-        },
-        {
-            idx:8,
-            card_photo: '02.jpg',
-            card_title: '대구 치맥 페스티벌',
-            card_content: '2022.7.6~7.10',
-        },
-        {
-            idx:9,
-            card_photo: '03.png',
-            card_title: '디어마이광주',
-            card_content: '2022.8.31~9.5',
-        },
-        {
-            idx:10,
-            card_photo: '04.jpg',
-            card_title: '신촌 물총축제',
-            card_content: '2022.7.30~7.31',
-        },
-        {
-            idx:11,
-            card_photo: '05.jpg',
-            card_title: '인천 펜타포트 락 페스티벌',
-            card_content: '2022.8.5~8.7',
-        },
-        {
-            idx:12,
-            card_photo: '06.jpg',
-            card_title: ' 씨네코리아엑스포',
-            card_content: '2022.10.6~10.8',
-        },
-    ]
+    // 메인 스크롤 이벤트
+    var lastScrollTop = 0;
 
-    //카드 복사하기
-    function showCards() {
-        let cardList = document.querySelector('.cardwrap');
-        cards.forEach(function (card) {
-            let newCard = document.querySelector(".card_item[hidden]").cloneNode(true);
-            newCard.querySelector(".card_photo").src = '../img/' + card.card_photo;
-            newCard.querySelector(".card_title").innerHTML = card.card_title;
-            newCard.querySelector(".card_content").innerHTML = card.card_content;
-            newCard.hidden = false;
-            cardList.appendChild(newCard);
-        })
+    document.querySelector("body").onscroll = function(){ 
+        // console.log(document.documentElement.scrollTop)
+    var st = window.pageYOffset || document.documentElement.scrollTop; 
+    if (st > lastScrollTop){
+        // downscroll code
+        headerwrap.classList.add("scroll-up")
+        
     }
-
-    window.onload = showCards();
-
-    //좋아요 누르면 빨간 하트로 바뀜
-    const filledHeart = []
-    const like = document.querySelectorAll(".heart_img")
-    like.forEach((tag) => {
-        tag.addEventListener("click", () => {
-            tag.classList.toggle("on")
-        })
-    })
-    
+    else if(window.pageYOffset == 0){
+        headerwrap.style.background="transparent" 
+        
+    } 
+    else {
+        // upscroll code
+        headerwrap.classList.remove("scroll-up")
+        headerwrap.style.background="#fff" 
+        headerwrap.style.borderBottom = "1px solid #ffbb2e"
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+    }
 </script>
-
 </html>
-<div></div>
