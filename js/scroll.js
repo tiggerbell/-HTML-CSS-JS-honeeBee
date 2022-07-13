@@ -36,9 +36,14 @@ topBtn.onclick = () => {
 
 //팀원 소개 스크롤이벤트
 (function () {
-    // window.addEventListener('scroll', function() {
-    //     info.innerHTML = window.pageYOffset;
-    // });
+    let scrollMs1 = document.querySelector(".ooo");
+    let scrollMs2 = document.querySelectorAll(".ooo")[1];
+    let scrollMs3 = document.querySelectorAll(".ooo")[2];
+    let scrollMs4 = document.querySelectorAll(".ooo")[3];
+    // let scrollMsTop1 = scrollMs1.getBoundingClientRect().top + window.pageYOffset;
+    // let scrollMsTop2 = scrollMs2.getBoundingClientRect().top + window.pageYOffset;
+    // let scrollMsTop3 = scrollMs3.getBoundingClientRect().top + window.pageYOffset;
+    // let scrollMsTop4 = scrollMs4.getBoundingClientRect().top + window.pageYOffset;
     let scrollEl = document.querySelector(".bbb")
     let scrollEl1 = document.querySelectorAll(".dodo")[0];
     let scrollEl2 = document.querySelectorAll(".dodo")[1];
@@ -48,51 +53,49 @@ topBtn.onclick = () => {
     let scrollElTop2 = scrollEl2.getBoundingClientRect().top + window.pageYOffset;
     let scrollElTop3 = scrollEl3.getBoundingClientRect().top + window.pageYOffset;
     let scrollElTop4 = scrollEl4.getBoundingClientRect().top + window.pageYOffset;
-    let scrollElBottom =scrollEl4.getBoundingClientRect().bottom + window.pageYOffset;
-    // console.log(window.scrollY-scrollElBottom)
+    // console.log(scrollMs1)
     window.addEventListener('scroll', function () {
-        // console.log(document.querySelectorAll(".dodo")[0].getBoundingClientRect().top + window.pageYOffset)
-        // console.log(window.scrollY)
-        // console.log(window.scrollY-scrollElTop2)
-        // console.log(window.scrollY-scrollElTop3)
-        // console.log(window.scrollY-scrollElTop4)
-        // console.log(window.scrollY-scrollElTop4)
-        // if(window.scrollY > 1226){
-        //     document.querySelector(".bbb").classList.add("img_move")
-        // }
-        // else if(window.scrollY > 3000){
-        //     document.querySelector(".bbb").classList.remove("img_move")
-        // }
-        // console.log((window.scrollY+800)-scrollElTop1)
+        // console.log(scrollElTop1)
         if((window.scrollY+800)-scrollElTop1 > 0){
-            document.querySelectorAll(".img_size")[0].style.width = (window.scrollY+600)-scrollElTop1+"px"
-            document.querySelectorAll(".img_size")[0].style.height = (window.scrollY+600)-scrollElTop1+"px"
+            document.querySelectorAll(".img_size")[0].style.width = (window.scrollY+600)-scrollElTop1+"px";
+            document.querySelectorAll(".img_size")[0].style.height = (window.scrollY+600)-scrollElTop1+"px";
+            if(document.querySelectorAll(".img_size")[0].style.width >= "500px"){
+                document.querySelectorAll(".ooo")[0].classList.add("img_move")
+            }
+            if(document.querySelectorAll(".img_size")[0].style.width < "500px"){
+                document.querySelectorAll(".ooo")[0].classList.remove("img_move")
+            }
         }
         if((window.scrollY+800)-scrollElTop2 > 0){
             document.querySelectorAll(".img_size")[1].style.width = (window.scrollY+600)-scrollElTop2+"px"
             document.querySelectorAll(".img_size")[1].style.height = (window.scrollY+600)-scrollElTop2+"px"
+            if(document.querySelectorAll(".img_size")[1].style.width >= "500px"){
+                document.querySelectorAll(".ooo")[1].classList.add("img_move")
+            }
+            if(document.querySelectorAll(".img_size")[1].style.width < "500px"){
+                document.querySelectorAll(".ooo")[1].classList.remove("img_move")
+            }
         }
         if((window.scrollY+800)-scrollElTop3 > 0){
             document.querySelectorAll(".img_size")[2].style.width = (window.scrollY+600)-scrollElTop3+"px"
             document.querySelectorAll(".img_size")[2].style.height = (window.scrollY+600)-scrollElTop3+"px"
+            if(document.querySelectorAll(".img_size")[2].style.width >= "500px"){
+                document.querySelectorAll(".ooo")[2].classList.add("img_move")
+            }
+            if(document.querySelectorAll(".img_size")[2].style.width <= "500px"){
+                document.querySelectorAll(".ooo")[2].classList.remove("img_move")
+            }
         }
         if((window.scrollY+800)-scrollElTop4 > 0){
             document.querySelectorAll(".img_size")[3].style.width = (window.scrollY+600)-scrollElTop4+"px"
             document.querySelectorAll(".img_size")[3].style.height = (window.scrollY+600)-scrollElTop4+"px"
+            if(document.querySelectorAll(".img_size")[3].style.width >= "500px"){
+                document.querySelectorAll(".ooo")[3].classList.add("img_move")
+            }
+            if(document.querySelectorAll(".img_size")[3].style.width < "500px"){
+                document.querySelectorAll(".ooo")[3].classList.remove("img_move")
+            }
         }
-
-        // if (window.scrollY > 2022){
-        //     document.querySelectorAll(".dodo")[0].classList.add("img_move")
-        // }
-        // if (window.scrollY > 2800){
-        //     document.querySelectorAll(".dodo")[1].classList.add("img_move")
-        // }
-        // if (window.scrollY > 3800){
-        //     document.querySelectorAll(".dodo")[2].classList.add("img_move")
-        // }
-        // if (window.scrollY > 4800){
-        //     document.querySelectorAll(".dodo")[3].classList.add("img_move")
-        // }
         if (window.scrollY > 1224) {
             scrollEl.classList.add('fixed');
             if ((window.scrollY-scrollElTop4)-560 >0) {
