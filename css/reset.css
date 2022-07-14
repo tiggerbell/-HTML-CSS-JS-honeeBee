@@ -29,6 +29,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
 }
 p, a, h1, h2, h3, h4, h5, h6 {
     transform: skew(-0.1deg);

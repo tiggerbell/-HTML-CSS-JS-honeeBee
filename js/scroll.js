@@ -111,3 +111,11 @@ topBtn.onclick = () => {
         }
     })
 })();
+
+//달력
+const calNum = new Date();
+const nowDate = calNum.getDate()
+const nowMonth = calNum.getMonth()+1
+
+document.querySelector('.bg_date').innerHTML = nowDate
+document.querySelector('.bg_month').innerHTML = nowMonth
