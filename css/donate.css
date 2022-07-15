@@ -1,5 +1,4 @@
 .donate {
-    
     background: url("../img/main5-bg.jpg") no-repeat;
     width: 100vw;
     height: 800px;
@@ -20,15 +19,14 @@
 }
 
 .bg_month, .bg_date{
-    background: url(../img/date-bg.png) no-repeat;
-    width: 110px;
-    height: 110px;
+    background: url(../img/date-bg.svg) no-repeat;
+    width: 120px;
+    height: 130px;
     color: #fff;
     position: relative;
     font-size: 3em;
-    padding: 35px 0 0 26px;
+    padding: 35px 0 0 35px;
 }
-
 
 .text_pack {
     position: relative;     

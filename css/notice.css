@@ -37,6 +37,7 @@
   .notice-title .txtAni:nth-child(10) { animation-delay: .9s; }
   .notice-title .txtAni:nth-child(11) { animation-delay: .10s; }
   .notice-title .txtAni:nth-child(12) { animation-delay: .11s; }
+  .notice-title .txtAni:nth-child(12) { animation-delay: .12s; }
   
   @keyframes bounce {
     100% {
