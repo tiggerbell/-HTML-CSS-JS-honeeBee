@@ -27,6 +27,10 @@
     font-size: 3em;
     padding: 35px 0 0 35px;
 }
+.bg_month span{
+    position: relative;
+    left: 10px;
+}
 
 .text_pack {
     position: relative;     

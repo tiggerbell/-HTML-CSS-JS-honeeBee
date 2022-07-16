@@ -118,4 +118,4 @@ const nowDate = calNum.getDate()
 const nowMonth = calNum.getMonth()+1
 
 document.querySelector('.bg_date').innerHTML = nowDate
-document.querySelector('.bg_month').innerHTML = nowMonth
+document.querySelector('.bg_month span').innerHTML = nowMonth

@@ -13,12 +13,11 @@ write_Btn10.onclick= function(){
 register.onclick = function(){
     // 날짜
     let today = new Date();
-    // let year = today.getFullYear();
-    // let month = ('0' + (today.getMonth() + 1)).slice(-2);
-    // let day = ('0' + today.getDate()).slice(-2);
-    let Hours = today.getHours()
-    let Minutes = "0"+today.getMinutes()
-    let dateString = Hours  + '-' + Minutes;
+    let year = today.getFullYear(); // 년도
+    let month = today.getMonth() + 1;  // 월
+    let date = today.getDate();  // 날짜
+    let day = today.getDay();  // 요일
+    let dateString = month  + "월  " + date + "일";
     // 게시글 틀 만들기
     let a =document.createElement('div')
     document.querySelector(".main_content").appendChild(a)
