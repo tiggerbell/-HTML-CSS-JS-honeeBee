@@ -9,7 +9,7 @@
 2. animation 를 통한 동적페이지 구성 
 3. 게시판 기능 
 
-#메인페이지
+## 📌 메인페이지
 <img width="461" alt="main" src="https://user-images.githubusercontent.com/107897978/228448797-a07ea299-fc97-44ef-a9b3-0c4ce630f094.PNG">
 
 
