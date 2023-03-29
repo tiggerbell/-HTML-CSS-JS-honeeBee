@@ -4,6 +4,9 @@
 ## 📌 개발기간
 2주
 
+## 📌 실행방법
+main.html 에서 Live Server 사용 (Ctrl + L + O)
+
 ## 📌 주요기능
 1. scroll 이벤트를 통한 동적페이지 구성 
 2. animation 를 통한 동적페이지 구성 
